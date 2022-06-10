@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL | E_STRICT);
+
+// Run the application, that's all !
+require_once __DIR__ . '/../vendor/autoload.php';
+Osf\Controller\Cli::run();

@@ -1,0 +1,298 @@
+<?php 
+
+use Osf\Container\OsfContainer as Container;
+use Osf\Form\Helper\Form as FormHelper;
+use Osf\Form\Element\ElementAbstract as E;
+use Osf\View\Component;
+use Osf\Stream\Text as T;
+
+/* @var $formHelper \Osf\Form\Helper\Form */
+
+// @task [REFACT] put this helper in a class
+
+$h          = Container::getViewHelperLayout();
+$formHelper = $this->getValue('form');
+$mainForm   = $formHelper->getForm();
+$forms      = $mainForm->getSubForms();
+$request    = Container::getRequest();
+$action     = $mainForm->getAction() ?: $request->getUri(true);
+$horizontal = $formHelper->getOrientation() === FormHelper::OR_HORIZONTAL;
+$horizontal && $formHelper->addCssClass('form-horizontal');
+$colsByLine = $formHelper->getSize();
+$random     = random_int(10000, 99999);
+
+$forms[''] = $mainForm;
+
+// Grille des labels horizontaux
+$hbwl = $horizontal ? '<div class="col-sm-3 control-label"></div><div class="col-sm-9">' : '';
+$hbe  = $horizontal ? '<div class="col-sm-9">' : '';
+$he   = $horizontal ? '</div>' : '';
+
+// Grille responsive
+$gcob = '<div class="container-fluid container-mid-padding">';
+$grob = '<div class="row">';
+$gceb = [12 => '<div class="col-xs-12 col-sm-12 col-lg-12',
+         11 => '<div class="col-xs-9 col-sm-10 col-lg-11', // 11 + 1 : reste en ligne
+          9 => '<div class="col-xs-12 col-sm-9 col-lg-9',
+          8 => '<div class="col-xs-12 col-sm-8 col-lg-8',
+          7 => '<div class="col-xs-12 col-sm-8 col-lg-4', // = 4 alternatif à utiliser avec des 2
+          6 => '<div class="col-xs-12 col-sm-6 col-lg-6',
+         61 => '<div class="col-xs-12 col-sm-12 col-lg-6',
+          5 => '<div class="col-xs-12 col-sm-5 col-lg-5',
+          4 => '<div class="col-xs-12 col-sm-4 col-lg-4',
+          3 => '<div class="col-xs-12 col-sm-3 col-lg-3',
+         31 => '<div class="col-xs-12 col-sm-6 col-lg-3', // 3 alternatif
+          2 => '<div class="col-xs-12 col-sm-4 col-lg-2',
+          1 => '<div class="col-xs-3 col-sm-2 col-lg-1']; // 11 + 1 : reste en ligne
+$gcee = '</div>';
+$groe = '</div>';
+$gcoe = '</div>';
+
+$isizes = FormHelper::SIZES;
+
+$formHelper->setAttributes([
+    'role' => 'form',
+    'action' => $action
+]);
+
+// Classes css : faself = recharge juste le formulaire (default), fapage = recharge la page (à spécifier au niveau du formulaire)
+//if (!$formHelper->hasCssClass('fapage') && !$formHelper->hasCssClass('faself')) {
+//    $formHelper->addCssClass('faself');
+//}
+
+// Message d'introduction du formulaire principal
+$htmlBefore = $mainForm->getHtmlBefore();
+$htmlAfter = $mainForm->getHtmlAfter();
+
+$htmlForms = [];
+$isMultiForms = count($forms) > 1;
+/* @var $accordion \Osf\View\Helper\Bootstrap\Accordion */
+$accordion = $isMultiForms ? clone $h->accordion()->closeAllItems() : null;
+$eltFocus = null;
+$eltError = null;
+$optButt = '';
+foreach ($forms as $formKey => $form) {
+    $contentItems = [];
+    $buttons = [];
+    $hasMultiFieldLines = false;
+    $hasError = false;
+    $hasWarning = false;
+    $hasFocus = false;
+    
+    // Champs
+    $displayLowButton = false;
+    $hasLowRelevanceElt = false;
+    $hidedFieldsErrors = false;
+
+    /* @var $elt \Osf\Form\Element\ElementAbstract */
+    foreach ($form->getElements() as $elt) {
+
+        // Configuration de l'élément
+        $errors = $elt->hasError() ? implode('<br />', $elt->getErrors()) : false;
+        $warnings = $elt->hasWarning() ? implode('<br />', $elt->getWarnings()) : false;
+        $hasError = $hasError || $elt->hasError();
+        $hasWarning = $hasWarning || $elt->hasWarning();
+        $desc = $errors ?: $warnings ?: Container::getMarkdown()->text($elt->getDescription());
+        $helpBlock = $desc ? (string) clone $h->html($desc, 'span', ['class' => 'help-block'], false) : '';
+        $className = preg_replace('/^.*?([a-zA-Z]+)$/', '$1', get_class($elt));
+        $classes = $elt->hasError() ? ' has-error' : ($elt->hasWarning() ? ' has-warning' : '');
+        $helpBadge = $elt->getHelpKey() ? ' ' . $h->help($elt->getHelpKey()) : '';
+        $elm = '';
+        
+        // Cet élément est-il masquable parce qu'il a une importance moindre ?
+        $rvToggle = $elt->getRelevance() === E::RELEVANCE_LOW;
+        
+        // Faut-il masquer cet élément à l'affichage du formulaire ?
+        $rvLow = $form->getCollapseLowRelevance() && $rvToggle;
+        
+        // Y a-t-il au moins un élément masquable dans ce formulaire ?
+        $hasLowRelevanceElt = $hasLowRelevanceElt || $elt->getRelevance() === E::RELEVANCE_LOW;
+        
+        // Faut-il afficher le bouton d'affichage des éléments de moindre importance ?
+        $displayLowButton = $displayLowButton || $rvLow;
+        
+        // Cet élément doit-il avoir le focus en entrant ?
+        if ($eltFocus === null && $elt->getFocus()) {
+            $eltFocus = $elt;
+            $hasFocus = true;
+        }
+        
+        // Cet élément a-t-il un attribut autofocus ?
+        if ($eltFocus === null && $elt->getHelper()->hasAttribute('autofocus')) {
+            $eltFocus = $elt;
+            Component::getJquery()->enableAutofocus();
+            $hasFocus = true;
+        }
+        
+        // Le premier élément avec une erreur doit avoir le focus en priorité
+        if ($eltError === null && $elt->hasError()) {
+            $eltError = $elt;
+            $eltFocus = $eltError;
+            $hasFocus = true;
+        }
+        
+        // Cet élément est masquable et contient des erreurs
+        if (!$hidedFieldsErrors && $elt->getRelevance() === E::RELEVANCE_LOW && $elt->hasError()) {
+            $hidedFieldsErrors = true;
+        }
+        
+        // Checkbox
+        if (in_array($className, ['ElementCheckbox'])) {
+            $elm  .= $hbwl;
+            $label = $h->html($elt->getLabel(), 'label', ['for' => $elt->getId()], false) . $helpBadge;
+            $elm  .= $h->html($elt . $label . $helpBlock, 'div', ['class' => 'checkbox icheck-primary'], false);
+            $elm  .= $he;
+        }
+
+        // Checkboxes
+        else if (in_array($className, ['ElementCheckboxes'])) {
+            $elm .= $hbwl . $elt . $helpBlock . $he;
+        } 
+
+        // Submit & Reset
+        else if (in_array($className, ['ElementSubmit', 'ElementReset']) && !$elt->getHelper()->getSize()) {
+            if (!$formKey) {
+                $elt->getHelper()->appendStyle('margin-left: 10px');
+                $buttons[] = (string) $elt->__toString();
+            }
+        } 
+
+        // Other elements
+        else {
+            if ($elt->getLabel()) {
+               $elm .= $h->html($elt->getLabel(), 'label', [
+                   'for'   => $elt->getId(), 
+                   'class' => ($horizontal ? 'col-sm-3 ' : '') . 'control-label'
+               ]) . $helpBadge;
+            }
+            $elm .= $hbe . $elt->__toString() . $helpBlock . $he;
+        }
+
+        if ($elm) {
+            
+            // Décoration de l'élément
+            $attrs = ['class' => 'form-group' . $classes];
+            $eltHtml = (string) $h->html($elm, 'div', $attrs, false);
+            $size = $elt->getHelper()->getSize() ?? $colsByLine ?? 12;
+            $contentItems[] = ['elt' => $eltHtml, 'size' => $size, 'low' => $rvLow, 'tog' => $rvToggle];
+            
+            // On affiche la grille s'il y a plusieurs éléments par ligne ou 
+            // si certains éléments doivent être masqués
+            $hasMultiFieldLines = $hasMultiFieldLines || ($size != 12) || $hasLowRelevanceElt;
+        }
+    }
+
+    // On affiche les champs optionnels si le focus est fixé sur un champ optionel
+    if ($eltFocus && $eltFocus->getRelevance() === E::RELEVANCE_LOW) {
+        foreach ($contentItems as &$contentItem) {
+            $contentItem['low'] = false;
+        }
+        $displayLowButton = false;
+    }
+    
+    // var_dump($hasMultiFieldLines);
+    // var_dump($contentItems); exit;
+
+    // Implode content with multifield lines grid if necessary
+    $content = '';
+    $colsCount = 0;
+    foreach ($contentItems as $item) {
+        if ($hasMultiFieldLines && $colsCount === 0) {
+            $content .= $grob;
+        }
+        if ($hasMultiFieldLines && $colsCount + $isizes[$item['size']] > 12) {
+            $content .= $groe . $grob;
+            $colsCount = 0;
+        }
+        $content .= $hasMultiFieldLines 
+                  ? $gceb[$item['size']] 
+                    . ($item['low'] ? ' rv-low' : '') 
+                    . ($item['tog'] ? ' rv-tog rv-' . $random : '') 
+                    . '">' . $item['elt'] . $gcee
+                  : $item['elt'];
+        $colsCount += $isizes[$item['size']];
+    }
+    if ($hasMultiFieldLines && $colsCount) {
+        $content .= $groe;
+    }
+    
+    // Préparation du contenu
+    $content = $hasMultiFieldLines ? $gcob . $content . $gcoe : $content;
+    
+    // Scripts : ajout du focus sur un élément.
+    $scripts = $eltFocus ? "$(document).ready(function(){\$('#" . $eltFocus->getId() . "').focus();});\$('#mform').on('shown.bs.modal',function(){\$('#" . $eltFocus->getId() . "').focus();});" : '';
+    
+    // J'affiche le bouton d'affichage des éléments de moindre importance s'il y a lieu
+    // Sinon, s'il y a des éléments à masquer, j'affiche le bouton de masquage
+    if ($displayLowButton || $hasLowRelevanceElt) {
+        $btnId = 'rv' . $random;
+        $hideRvsa = $displayLowButton ? '' : ' style="display: none"';
+        $hideRvsm = $hideRvsa ? '' : ' style="display: none"';
+        
+        // Bouton d'affichage et de masquage + tag RVS
+        $optButt = '<input type="hidden" id="rvs' . $random . '" name="rvs" value="-1">'
+                 . '<div class="row"><div class="col-md-4 col-md-offset-4">' 
+                 . '<a href="#" class="btn btn-block btn-' . ($hidedFieldsErrors ? 'danger' : 'default') . '" id="' . $btnId . 'a"' . $hideRvsa . '>⇣ ' 
+                 . __("plus d'options") . ' ⇣</a>'
+                 . '<a href="#" class="btn btn-block btn-default btn-lessopt" id="' . $btnId . 'm"' . $hideRvsm . '>⇡ ' 
+                 . __("moins d'options") . ' ⇡</a>'
+                 . '</div></div>';
+        $scripts .= '$("#' . $btnId . 'a").click(function(e){e.preventDefault();e.stopPropagation();$("#rvs' . $random . '").val(0);$("#' . $btnId . 'a").hide();$(".rv-' . $random . '").fadeIn(200,function(){$("#' . $btnId . 'm").show();});return false;});'
+                 .  '$("#' . $btnId . 'm").click(function(e){e.preventDefault();e.stopPropagation();$("#rvs' . $random . '").val(1);$("#' . $btnId . 'm").hide();$(".rv-' . $random . '").fadeOut(200,function(){$("#' . $btnId . 'a").show();});return false;});';
+
+    }
+    $scripts && Component::getJquery()->registerScript($scripts);
+
+    $footer = isset($buttons[0]) 
+            ? $h->icon('spinner', null, null, true)
+                ->addCssClasses(['form-wait', 'hidden']) . implode('', $buttons) 
+            : '';
+
+    // Si c'est le formulaire principal et qu'il faut créer un box, 
+    // c.a.d. il y a un titre, un icone ou un sous-formulaire
+    if ($formKey === '' && ($form->getTitle() || $form->getIcon())) {
+        $box = $h->box($form->getTitle(), $content, null, false, $form->getCollapsable(), $form->getExpandable())
+                 ->icon($form->getIcon(), $form->getIconColor());
+        if ($footer) {
+            $box->setFooter($footer)->setFooterAlignRight();
+        } else {
+            $box->addCssClass('no-bottom');
+        }
+        if ($form->getHelp()) {
+            $box->setHeader($h->help($form->getHelp()));
+        }
+        //$hasError || $box->addCssClass('box-solid');
+        $hasError && $box->statusDanger() || ($hasWarning && $box->statusWarning());
+    }
+    
+    // Si c'est un sous-formulaire, ajouter un panel à l'accordéon
+    else if ($isMultiForms && $formKey !== '') {
+        $pTitle = ($form->getHelp() ? $h->html($h->help($form->getHelp()))->addCssClass('pull-right')->escape(false) : '')
+                . $form->getTitle() ?? T::ucFirst(__($formKey));
+        $panel = clone $h->panel();
+        $panel->setTitle($pTitle)
+              ->setContent($form->getHtmlBefore() . $content . $form->getHtmlAfter())
+              ->setFooter($footer)
+              ->icon($form->getIcon());
+        $hasError && $panel->statusDanger() || ($hasWarning && $panel->statusWarning());
+        $accordion->addPanel($panel);
+        if ($hasFocus || $hasError || $form->getCollapsable()) {
+            $accordion->setOpenedItem();
+        }
+    }
+    
+    // S'il y a un formulaire simple, ne pas créer de box
+    else {
+        $box = $content . $footer;
+    }
+}
+
+$accordion = $isMultiForms ? (string) $accordion : '';
+if (is_object($box)) {
+    $box->setContent($box->getContent() . $accordion . $optButt);
+} else {
+    $box .= $accordion . $optButt;
+}
+$isMultiForms && $formHelper->setAttribute('novalidate');
+
+echo (string) $h->html($htmlBefore . $box . $htmlAfter, 'form', $formHelper->getAttributes(), false);

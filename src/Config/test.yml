@@ -1,0 +1,37 @@
+## Configuration test
+---
+profile:
+  name: general
+  title: Général
+  comment: Profil générique
+forms:
+  product:
+    title: Produits
+    options:
+      currency:
+        label: Monnaie
+        type: select
+        options: 
+          EUR: "€"
+          DOL: "$"
+        default: 'EUR'
+  user:
+    title: Utilisateurs
+    options:
+      isbn:
+        label: Monnaie
+        type: select
+        options: 
+          EUR: "€"
+          DOL: "$"
+  cosmetics:
+    title: Cosmétique
+    options:
+      color:
+        label: Couleur principale
+        type: color
+        size: 6
+      coloralt:
+        label: Couleur alternative
+        type: color
+        size: 6

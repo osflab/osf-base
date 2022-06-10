@@ -1,0 +1,30 @@
+#!/bin/sh
+
+THISPATH=`dirname $0`
+PHP=`which php`
+
+if [ ! $PHP ]; then
+    echo 'PHP interpreter not found'
+    exit 1
+fi
+
+TCPDFAF=`realpath $THISPATH'/../../../../../vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php' 2> /dev/null`
+if [ ! $TCPDFAF ] ;then
+  TCPDFAF=`realpath $THISPATH'/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php' 2> /dev/null`
+  if [ ! $TCPDFAF ] ;then
+    echo 'TCPDF add fonts script not found. Please run composer update.'
+    exit 1
+  fi
+fi
+
+echo -e 'Updating fonts... '
+
+cd $THISPATH'/fonts'
+$PHP $TCPDFAF -f 32 -i helvetica_light.ttf,helvetica_light-bold.ttf,helvetica_regular.ttf,helvetica_bold.ttf,helvetica_condensed.ttf
+$PHP $TCPDFAF -f 96 -i helvetica_regular_italic.ttf,helvetica_bold_italic.ttf,helvetica_light_italic.ttf,helvetica_regular_italic.ttf
+$PHP $TCPDFAF -f 32 -i lato-hairline.ttf,lato-thin.ttf,lato-light.ttf,lato-light-bold.ttf,lato-regular.ttf,lato-medium.ttf,lato-semibold.ttf,lato-bold.ttf,lato-heavy.ttf,lato-black.ttf
+$PHP $TCPDFAF -f 96 -i lato-hairlineitalic.ttf,lato-thinitalic.ttf,lato-lightitalic.ttf,lato-lightitalic-bold.ttf,lato-italic.ttf,lato-mediumitalic.ttf,lato-semibolditalic.ttf,lato-bolditalic.ttf,lato-heavyitalic.ttf,lato-blackitalic.ttf
+$PHP $TCPDFAF -f 32 -i robotomono-light.ttf,robotomono.ttf,robotomono-bold.ttf
+$PHP $TCPDFAF -f 32 -i overpassmono-light.ttf
+
+echo 'done'

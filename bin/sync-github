@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+
+use Osf\Github\Sync;
+
+require __DIR__ . '/.cli.php';
+Sync::run();
