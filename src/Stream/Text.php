@@ -364,7 +364,7 @@ class Text
         if (!isset($words[$word])) {
             $words[$word] = str_replace(' ', '', ucwords(strtr($word, '_', ' ')));
             if (!$ucFirstWord) {
-                substr_replace($words[$word], $word{0}, 0, 1);
+                substr_replace($words[$word], $word[0], 0, 1);
             }
         }
         return $words[$word];

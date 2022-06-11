@@ -62,22 +62,24 @@ class Crypt
             $ivSize = openssl_cipher_iv_length(self::CIPHER_METHOD);
             $iv = openssl_random_pseudo_bytes($ivSize);
         }
+
         return $iv;
     }
 
     /**
      * @param string $h
-     * @return string
+     * @return null|string
      */
-    protected function hex2bin($h): string
+    protected function hex2bin($h): ?string
     {
         if (!is_string($h)) {
             return null;
         }
         $r = '';
         for ($a = 0; $a < strlen($h); $a += 2) {
-            $r .= chr(hexdec($h{$a} . $h{($a + 1)}));
+            $r .= chr(hexdec($h[$a] . $h[($a + 1)]));
         }
+
         return $r;
     }
 

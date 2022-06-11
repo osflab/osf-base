@@ -2,4 +2,3 @@
 
 THIS_DIR=`dirname $0`
 /usr/bin/env php $THIS_DIR/osf test $THIS_DIR'/../src'
-

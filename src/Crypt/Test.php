@@ -1,4 +1,5 @@
 <?php
+
 namespace Osf\Crypt;
 
 use Osf\Crypt\Crypt;

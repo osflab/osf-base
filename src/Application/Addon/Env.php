@@ -1,4 +1,5 @@
 <?php
+
 namespace Osf\Application\Addon;
 
 use Osf\Application\OsfApplication as Application;

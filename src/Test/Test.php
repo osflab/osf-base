@@ -1,6 +1,8 @@
 <?php
+
 namespace Osf\Test;
 
+use Exception;
 use Osf\Test\Runner as OsfTest;
 
 /**
@@ -26,7 +28,7 @@ class Test extends OsfTest
         }
         
         // Displays exception
-        catch (\Exception $e) {
+        catch (Exception $e) {
             self::assertFalseException($e);
         }
         

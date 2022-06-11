@@ -1,7 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+use Osf\Test\Runner;
+
 // Environment init
+
 defined('APPLICATION_ENV') || define('APPLICATION_ENV', 'development');
 set_include_path(realpath(__DIR__ . '/../..') . PATH_SEPARATOR . get_include_path());
 
@@ -20,4 +23,4 @@ function __($txt) { return $txt; }
 // Run
 $dir = isset($_SERVER['argv'][1]) ? realpath($_SERVER['argv'][1]) : getcwd();
 $filter = isset($_SERVER['argv'][2]) ? '/' . $_SERVER['argv'][2] . '/' : null;
-\Osf\Test\Runner::runDirectory($dir, '/Test', $filter) || exit(1);
+Runner::runDirectory($dir, '/Test', $filter) || exit(1);
