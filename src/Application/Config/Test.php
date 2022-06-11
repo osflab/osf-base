@@ -16,6 +16,9 @@ use Osf\Test\Runner as OsfTest;
  */
 class Test extends OsfTest
 {
+    /**
+     * @return array|bool
+     */
     public static function run()
     {
         self::reset();

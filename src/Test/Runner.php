@@ -1,8 +1,12 @@
 <?php
+
 namespace Osf\Test;
 
+use FilesystemIterator;
 use Osf\Console\ConsoleHelper as Console;
 use Exception;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 /**
  * Simple unit test manager for OSF components
@@ -23,10 +27,10 @@ class Runner
 
     /**
      * Simple assert of the test application
-     * @param boolean $condition
+     * @param bool|mixed $condition
      * @param string $errorMessage
-     * @param boolean $exitOnError
-     * @return boolean
+     * @param bool $exitOnError
+     * @return bool
      */
     protected static function assert($condition, string $errorMessage = '', bool $exitOnError = false): bool
     {
@@ -45,6 +49,7 @@ class Runner
                 exit;
             }
         }
+
         return (bool) $condition;
     }
     
@@ -68,21 +73,27 @@ class Runner
         }
         return self::assert($result, $msg, $exitOnError);
     }
-    
+
+    /**
+     * @param mixed $var
+     * @return string
+     */
     private static function varExport($var): string
     {
         return preg_replace('/  +/', ' ', str_replace("\n", '', print_r($var, true)));
     }
-    
+
     /**
      * Assert false and display exception
      * @param Exception $e
+     * @return bool
      */
-    protected static function assertFalseException(\Exception $e): bool
+    protected static function assertFalseException(Exception $e): bool
     {
         $msg = 'EXCEPTION: ' . $e->getMessage();
         $msg .= "\n    " . $e->getFile() . ' ('  . $e->getLine() . ')';
-        self::assert(false, $msg);
+
+        return self::assert(false, $msg);
     }
 
     /**
@@ -115,7 +126,7 @@ class Runner
      * Add an error in the table
      * @param string $message
      */
-    private static function addError($message): void
+    private static function addError(string $message): void
     {
         if (self::$result === false) {
             self::$result = array();
@@ -136,18 +147,25 @@ class Runner
     /**
      * Run recursively a testsuite in a directory.
      * @param string $path
-     * @return boolean
+     * @param string $testSuffix
+     * @param string|null $filter
+     * @param string|null $exclude
+     * @return bool
      */
     public static function runDirectory(
-            string $path, 
-            string $testSuffix = '/Test', 
-            ?string $filter = null,
-            ?string $exclude = '/vendor/'): bool
-    {
-        foreach (new \RecursiveIteratorIterator(
-        new \RecursiveDirectoryIterator($path,
-        \RecursiveDirectoryIterator::KEY_AS_PATHNAME),
-        \RecursiveIteratorIterator::CHILD_FIRST) as $file => $info) {
+        string $path,
+        string $testSuffix = '/Test',
+        ?string $filter = null,
+        ?string $exclude = '/vendor/'
+    ): bool {
+        foreach (
+            new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator(
+                    $path,
+                    FilesystemIterator::KEY_AS_PATHNAME
+                ),
+            RecursiveIteratorIterator::CHILD_FIRST
+            ) as $file => $info) {
             
             // Filter files
             if (!preg_match('#^' . $path . '.*' . $testSuffix . '\.php$#', $file) ||
@@ -183,21 +201,22 @@ class Runner
      * Run a single test class
      * @param string $className
      * @param string|null $filter
-     * @return bool
+     * @return void
      */
-    private static function runClass(string $className, ?string $filter): bool
+    private static function runClass(string $className, ?string $filter): void
     {
         echo Console::beginActionMessage($className);
         flush();
         if (!is_null($filter) && !preg_match($filter, $className)) {
             echo Console::endActionSkip();
             flush();
-            return false;
+            return;
         }
+
         try {
             $result = call_user_func(array($className, 'run'));
-        } catch (\Exception $e) {
-            $result = array($e->getMessage(), 'Exception catched in the test library :', 
+        } catch (Exception $e) {
+            $result = array($e->getMessage(), 'Exception caught in the test library :',
             $e->getFile() . '(' . $e->getLine() . ')');
             if (defined('APPLICATION_ENV') && APPLICATION_ENV == 'development') {
                 echo Console::endActionFail();
@@ -205,6 +224,7 @@ class Runner
                 exit;
             }
         }
+
         if ($result === false) {
             echo Console::endActionOK();
         } else if ($result === true) {
@@ -216,8 +236,6 @@ class Runner
             }
         }
         flush();
-        
-        return true;
     }
     
     /**
@@ -226,7 +244,7 @@ class Runner
      */
     protected static function exceptionToStr(Exception $e): string
     {
-        $msg  = 'ERR: ' . $e->getMessage() . ' (' . $e->getCode() . ")\n";
+        $msg = 'ERR: ' . $e->getMessage() . ' (' . $e->getCode() . ")\n";
         $msg .= '     in file ' . $e->getFile() . ':' . $e->getLine() . "\n";
         $msg .= $e->getTraceAsString() . "\n";
         return $msg;

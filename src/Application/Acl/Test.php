@@ -61,7 +61,7 @@ class Test extends OsfTest
         self::assert(!$acl->isAllowed('LOGGED', 'info'));
         self::assert(!$acl->isAllowed('NOTLOGGED', 'info'));
         
-        self::assert($acl->addRole('me@test.com', 'ADMIN'));
+        self::assert((bool) $acl->addRole('me@test.com', 'ADMIN'));
         self::assert(!$acl->isAllowed('me@test.com', 'info'));
         self::assert($acl->isAllowed('me@test.com', 'info_public'));
         self::assert($acl->isAllowed('me@test.com', 'info_private'));
