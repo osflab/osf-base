@@ -1,7 +1,7 @@
 <?php
 namespace Osf\Db\Row;
 
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 use Osf\Exception\ArchException;
 
 /**

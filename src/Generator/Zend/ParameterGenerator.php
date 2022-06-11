@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Generator\Zend;
+namespace Osf\Generator\Laminas;
 
-use Zend\Code\Generator\ParameterGenerator as ZPG;
+use Laminas\Code\Generator\ParameterGenerator as ZPG;
 
 /**
  * Zend ParameterGenerator with simple types generation

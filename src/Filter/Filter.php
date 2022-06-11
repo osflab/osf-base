@@ -16,86 +16,86 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
 {
 
     protected static $classes = [
-        'BaseName' => '\\Osf\\Filter\\Zend\\ZendFilterBaseName',
-        'Blacklist' => '\\Osf\\Filter\\Zend\\ZendFilterBlacklist',
-        'Boolean' => '\\Osf\\Filter\\Zend\\ZendFilterBoolean',
-        'Callback' => '\\Osf\\Filter\\Zend\\ZendFilterCallback',
+        'BaseName' => '\\Osf\\Filter\\Laminas\\LaminasFilterBaseName',
+        'Blacklist' => '\\Osf\\Filter\\Laminas\\LaminasFilterBlacklist',
+        'Boolean' => '\\Osf\\Filter\\Laminas\\LaminasFilterBoolean',
+        'Callback' => '\\Osf\\Filter\\Laminas\\LaminasFilterCallback',
         'CleanPhrase' => '\\Osf\\Filter\\CleanPhrase',
-        'Compress' => '\\Osf\\Filter\\Zend\\ZendFilterCompress',
-        'CompressBz2' => '\\Osf\\Filter\\Zend\\ZendFilterCompressBz2',
-        'CompressCompressionAlgorithmInterface' => '\\Osf\\Filter\\Zend\\ZendFilterCompressCompressionAlgorithmInterface',
-        'CompressGz' => '\\Osf\\Filter\\Zend\\ZendFilterCompressGz',
-        'CompressLzf' => '\\Osf\\Filter\\Zend\\ZendFilterCompressLzf',
-        'CompressRar' => '\\Osf\\Filter\\Zend\\ZendFilterCompressRar',
-        'CompressSnappy' => '\\Osf\\Filter\\Zend\\ZendFilterCompressSnappy',
-        'CompressTar' => '\\Osf\\Filter\\Zend\\ZendFilterCompressTar',
-        'CompressZip' => '\\Osf\\Filter\\Zend\\ZendFilterCompressZip',
-        'ConfigProvider' => '\\Osf\\Filter\\Zend\\ZendFilterConfigProvider',
+        'Compress' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompress',
+        'CompressBz2' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressBz2',
+        'CompressCompressionAlgorithmInterface' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressCompressionAlgorithmInterface',
+        'CompressGz' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressGz',
+        'CompressLzf' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressLzf',
+        'CompressRar' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressRar',
+        'CompressSnappy' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressSnappy',
+        'CompressTar' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressTar',
+        'CompressZip' => '\\Osf\\Filter\\Laminas\\LaminasFilterCompressZip',
+        'ConfigProvider' => '\\Osf\\Filter\\Laminas\\LaminasFilterConfigProvider',
         'Currency' => '\\Osf\\Filter\\Currency',
-        'DataUnitFormatter' => '\\Osf\\Filter\\Zend\\ZendFilterDataUnitFormatter',
-        'DateSelect' => '\\Osf\\Filter\\Zend\\ZendFilterDateSelect',
-        'DateTimeFormatter' => '\\Osf\\Filter\\Zend\\ZendFilterDateTimeFormatter',
-        'DateTimeSelect' => '\\Osf\\Filter\\Zend\\ZendFilterDateTimeSelect',
+        'DataUnitFormatter' => '\\Osf\\Filter\\Laminas\\LaminasFilterDataUnitFormatter',
+        'DateSelect' => '\\Osf\\Filter\\Laminas\\LaminasFilterDateSelect',
+        'DateTimeFormatter' => '\\Osf\\Filter\\Laminas\\LaminasFilterDateTimeFormatter',
+        'DateTimeSelect' => '\\Osf\\Filter\\Laminas\\LaminasFilterDateTimeSelect',
         'DateWire' => '\\Osf\\Filter\\DateWire',
-        'Decompress' => '\\Osf\\Filter\\Zend\\ZendFilterDecompress',
-        'Decrypt' => '\\Osf\\Filter\\Zend\\ZendFilterDecrypt',
-        'Digits' => '\\Osf\\Filter\\Zend\\ZendFilterDigits',
-        'Dir' => '\\Osf\\Filter\\Zend\\ZendFilterDir',
-        'Encrypt' => '\\Osf\\Filter\\Zend\\ZendFilterEncrypt',
-        'EncryptBlockCipher' => '\\Osf\\Filter\\Zend\\ZendFilterEncryptBlockCipher',
-        'EncryptEncryptionAlgorithmInterface' => '\\Osf\\Filter\\Zend\\ZendFilterEncryptEncryptionAlgorithmInterface',
-        'EncryptOpenssl' => '\\Osf\\Filter\\Zend\\ZendFilterEncryptOpenssl',
-        'FileDecrypt' => '\\Osf\\Filter\\Zend\\ZendFilterFileDecrypt',
-        'FileEncrypt' => '\\Osf\\Filter\\Zend\\ZendFilterFileEncrypt',
-        'FileLowerCase' => '\\Osf\\Filter\\Zend\\ZendFilterFileLowerCase',
-        'FileRename' => '\\Osf\\Filter\\Zend\\ZendFilterFileRename',
-        'FileRenameUpload' => '\\Osf\\Filter\\Zend\\ZendFilterFileRenameUpload',
-        'FileUpperCase' => '\\Osf\\Filter\\Zend\\ZendFilterFileUpperCase',
-        'FilterChain' => '\\Osf\\Filter\\Zend\\ZendFilterFilterChain',
-        'FilterInterface' => '\\Osf\\Filter\\Zend\\ZendFilterFilterInterface',
-        'FilterPluginManager' => '\\Osf\\Filter\\Zend\\ZendFilterFilterPluginManager',
-        'FilterPluginManagerFactory' => '\\Osf\\Filter\\Zend\\ZendFilterFilterPluginManagerFactory',
-        'HtmlEntities' => '\\Osf\\Filter\\Zend\\ZendFilterHtmlEntities',
-        'Inflector' => '\\Osf\\Filter\\Zend\\ZendFilterInflector',
-        'Int' => '\\Osf\\Filter\\Zend\\ZendFilterInt',
+        'Decompress' => '\\Osf\\Filter\\Laminas\\LaminasFilterDecompress',
+        'Decrypt' => '\\Osf\\Filter\\Laminas\\LaminasFilterDecrypt',
+        'Digits' => '\\Osf\\Filter\\Laminas\\LaminasFilterDigits',
+        'Dir' => '\\Osf\\Filter\\Laminas\\LaminasFilterDir',
+        'Encrypt' => '\\Osf\\Filter\\Laminas\\LaminasFilterEncrypt',
+        'EncryptBlockCipher' => '\\Osf\\Filter\\Laminas\\LaminasFilterEncryptBlockCipher',
+        'EncryptEncryptionAlgorithmInterface' => '\\Osf\\Filter\\Laminas\\LaminasFilterEncryptEncryptionAlgorithmInterface',
+        'EncryptOpenssl' => '\\Osf\\Filter\\Laminas\\LaminasFilterEncryptOpenssl',
+        'FileDecrypt' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileDecrypt',
+        'FileEncrypt' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileEncrypt',
+        'FileLowerCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileLowerCase',
+        'FileRename' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileRename',
+        'FileRenameUpload' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileRenameUpload',
+        'FileUpperCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterFileUpperCase',
+        'FilterChain' => '\\Osf\\Filter\\Laminas\\LaminasFilterFilterChain',
+        'FilterInterface' => '\\Osf\\Filter\\Laminas\\LaminasFilterFilterInterface',
+        'FilterPluginManager' => '\\Osf\\Filter\\Laminas\\LaminasFilterFilterPluginManager',
+        'FilterPluginManagerFactory' => '\\Osf\\Filter\\Laminas\\LaminasFilterFilterPluginManagerFactory',
+        'HtmlEntities' => '\\Osf\\Filter\\Laminas\\LaminasFilterHtmlEntities',
+        'Inflector' => '\\Osf\\Filter\\Laminas\\LaminasFilterInflector',
+        'Int' => '\\Osf\\Filter\\Laminas\\LaminasFilterInt',
         'MaskTrim' => '\\Osf\\Filter\\MaskTrim',
-        'Module' => '\\Osf\\Filter\\Zend\\ZendFilterModule',
-        'MonthSelect' => '\\Osf\\Filter\\Zend\\ZendFilterMonthSelect',
-        'Null' => '\\Osf\\Filter\\Zend\\ZendFilterNull',
+        'Module' => '\\Osf\\Filter\\Laminas\\LaminasFilterModule',
+        'MonthSelect' => '\\Osf\\Filter\\Laminas\\LaminasFilterMonthSelect',
+        'Null' => '\\Osf\\Filter\\Laminas\\LaminasFilterNull',
         'Percentage' => '\\Osf\\Filter\\Percentage',
-        'PregReplace' => '\\Osf\\Filter\\Zend\\ZendFilterPregReplace',
-        'RealPath' => '\\Osf\\Filter\\Zend\\ZendFilterRealPath',
+        'PregReplace' => '\\Osf\\Filter\\Laminas\\LaminasFilterPregReplace',
+        'RealPath' => '\\Osf\\Filter\\Laminas\\LaminasFilterRealPath',
         'RemoveSpaces' => '\\Osf\\Filter\\RemoveSpaces',
-        'StaticFilter' => '\\Osf\\Filter\\Zend\\ZendFilterStaticFilter',
-        'StringToLower' => '\\Osf\\Filter\\Zend\\ZendFilterStringToLower',
-        'StringToUpper' => '\\Osf\\Filter\\Zend\\ZendFilterStringToUpper',
-        'StringTrim' => '\\Osf\\Filter\\Zend\\ZendFilterStringTrim',
-        'StripNewlines' => '\\Osf\\Filter\\Zend\\ZendFilterStripNewlines',
-        'StripTags' => '\\Osf\\Filter\\Zend\\ZendFilterStripTags',
+        'StaticFilter' => '\\Osf\\Filter\\Laminas\\LaminasFilterStaticFilter',
+        'StringToLower' => '\\Osf\\Filter\\Laminas\\LaminasFilterStringToLower',
+        'StringToUpper' => '\\Osf\\Filter\\Laminas\\LaminasFilterStringToUpper',
+        'StringTrim' => '\\Osf\\Filter\\Laminas\\LaminasFilterStringTrim',
+        'StripNewlines' => '\\Osf\\Filter\\Laminas\\LaminasFilterStripNewlines',
+        'StripTags' => '\\Osf\\Filter\\Laminas\\LaminasFilterStripTags',
         'Telephone' => '\\Osf\\Filter\\Telephone',
-        'ToInt' => '\\Osf\\Filter\\Zend\\ZendFilterToInt',
-        'ToNull' => '\\Osf\\Filter\\Zend\\ZendFilterToNull',
+        'ToInt' => '\\Osf\\Filter\\Laminas\\LaminasFilterToInt',
+        'ToNull' => '\\Osf\\Filter\\Laminas\\LaminasFilterToNull',
         'UcPhrase' => '\\Osf\\Filter\\UcPhrase',
-        'UpperCaseWords' => '\\Osf\\Filter\\Zend\\ZendFilterUpperCaseWords',
-        'UriNormalize' => '\\Osf\\Filter\\Zend\\ZendFilterUriNormalize',
-        'Whitelist' => '\\Osf\\Filter\\Zend\\ZendFilterWhitelist',
-        'WordCamelCaseToDash' => '\\Osf\\Filter\\Zend\\ZendFilterWordCamelCaseToDash',
-        'WordCamelCaseToSeparator' => '\\Osf\\Filter\\Zend\\ZendFilterWordCamelCaseToSeparator',
-        'WordCamelCaseToUnderscore' => '\\Osf\\Filter\\Zend\\ZendFilterWordCamelCaseToUnderscore',
-        'WordDashToCamelCase' => '\\Osf\\Filter\\Zend\\ZendFilterWordDashToCamelCase',
-        'WordDashToSeparator' => '\\Osf\\Filter\\Zend\\ZendFilterWordDashToSeparator',
-        'WordDashToUnderscore' => '\\Osf\\Filter\\Zend\\ZendFilterWordDashToUnderscore',
-        'WordSeparatorToCamelCase' => '\\Osf\\Filter\\Zend\\ZendFilterWordSeparatorToCamelCase',
-        'WordSeparatorToDash' => '\\Osf\\Filter\\Zend\\ZendFilterWordSeparatorToDash',
-        'WordSeparatorToSeparator' => '\\Osf\\Filter\\Zend\\ZendFilterWordSeparatorToSeparator',
-        'WordUnderscoreToCamelCase' => '\\Osf\\Filter\\Zend\\ZendFilterWordUnderscoreToCamelCase',
-        'WordUnderscoreToDash' => '\\Osf\\Filter\\Zend\\ZendFilterWordUnderscoreToDash',
-        'WordUnderscoreToSeparator' => '\\Osf\\Filter\\Zend\\ZendFilterWordUnderscoreToSeparator',
-        'WordUnderscoreToStudlyCase' => '\\Osf\\Filter\\Zend\\ZendFilterWordUnderscoreToStudlyCase',
+        'UpperCaseWords' => '\\Osf\\Filter\\Laminas\\LaminasFilterUpperCaseWords',
+        'UriNormalize' => '\\Osf\\Filter\\Laminas\\LaminasFilterUriNormalize',
+        'Whitelist' => '\\Osf\\Filter\\Laminas\\LaminasFilterWhitelist',
+        'WordCamelCaseToDash' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordCamelCaseToDash',
+        'WordCamelCaseToSeparator' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordCamelCaseToSeparator',
+        'WordCamelCaseToUnderscore' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordCamelCaseToUnderscore',
+        'WordDashToCamelCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordDashToCamelCase',
+        'WordDashToSeparator' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordDashToSeparator',
+        'WordDashToUnderscore' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordDashToUnderscore',
+        'WordSeparatorToCamelCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordSeparatorToCamelCase',
+        'WordSeparatorToDash' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordSeparatorToDash',
+        'WordSeparatorToSeparator' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordSeparatorToSeparator',
+        'WordUnderscoreToCamelCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordUnderscoreToCamelCase',
+        'WordUnderscoreToDash' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordUnderscoreToDash',
+        'WordUnderscoreToSeparator' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordUnderscoreToSeparator',
+        'WordUnderscoreToStudlyCase' => '\\Osf\\Filter\\Laminas\\LaminasFilterWordUnderscoreToStudlyCase',
     ];
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBaseName
+     * @return \Osf\Filter\Laminas\LaminasFilterBaseName
      */
     public static function newBaseName(...$args)
     {
@@ -103,7 +103,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBaseName
+     * @return \Osf\Filter\Laminas\LaminasFilterBaseName
      */
     public static function getBaseName(...$args)
     {
@@ -111,7 +111,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBlacklist
+     * @return \Osf\Filter\Laminas\LaminasFilterBlacklist
      */
     public static function newBlacklist(...$args)
     {
@@ -119,7 +119,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBlacklist
+     * @return \Osf\Filter\Laminas\LaminasFilterBlacklist
      */
     public static function getBlacklist(...$args)
     {
@@ -127,7 +127,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBoolean
+     * @return \Osf\Filter\Laminas\LaminasFilterBoolean
      */
     public static function newBoolean(...$args)
     {
@@ -135,7 +135,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterBoolean
+     * @return \Osf\Filter\Laminas\LaminasFilterBoolean
      */
     public static function getBoolean(...$args)
     {
@@ -143,7 +143,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCallback
+     * @return \Osf\Filter\Laminas\LaminasFilterCallback
      */
     public static function newCallback(...$args)
     {
@@ -151,7 +151,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCallback
+     * @return \Osf\Filter\Laminas\LaminasFilterCallback
      */
     public static function getCallback(...$args)
     {
@@ -175,7 +175,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompress
+     * @return \Osf\Filter\Laminas\LaminasFilterCompress
      */
     public static function newCompress(...$args)
     {
@@ -183,7 +183,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompress
+     * @return \Osf\Filter\Laminas\LaminasFilterCompress
      */
     public static function getCompress(...$args)
     {
@@ -191,7 +191,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressBz2
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressBz2
      */
     public static function newCompressBz2(...$args)
     {
@@ -199,7 +199,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressBz2
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressBz2
      */
     public static function getCompressBz2(...$args)
     {
@@ -207,7 +207,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressCompressionAlgorithmInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressCompressionAlgorithmInterface
      */
     public static function newCompressCompressionAlgorithmInterface(...$args)
     {
@@ -215,7 +215,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressCompressionAlgorithmInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressCompressionAlgorithmInterface
      */
     public static function getCompressCompressionAlgorithmInterface(...$args)
     {
@@ -223,7 +223,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressGz
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressGz
      */
     public static function newCompressGz(...$args)
     {
@@ -231,7 +231,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressGz
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressGz
      */
     public static function getCompressGz(...$args)
     {
@@ -239,7 +239,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressLzf
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressLzf
      */
     public static function newCompressLzf(...$args)
     {
@@ -247,7 +247,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressLzf
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressLzf
      */
     public static function getCompressLzf(...$args)
     {
@@ -255,7 +255,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressRar
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressRar
      */
     public static function newCompressRar(...$args)
     {
@@ -263,7 +263,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressRar
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressRar
      */
     public static function getCompressRar(...$args)
     {
@@ -271,7 +271,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressSnappy
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressSnappy
      */
     public static function newCompressSnappy(...$args)
     {
@@ -279,7 +279,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressSnappy
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressSnappy
      */
     public static function getCompressSnappy(...$args)
     {
@@ -287,7 +287,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressTar
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressTar
      */
     public static function newCompressTar(...$args)
     {
@@ -295,7 +295,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressTar
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressTar
      */
     public static function getCompressTar(...$args)
     {
@@ -303,7 +303,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressZip
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressZip
      */
     public static function newCompressZip(...$args)
     {
@@ -311,7 +311,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterCompressZip
+     * @return \Osf\Filter\Laminas\LaminasFilterCompressZip
      */
     public static function getCompressZip(...$args)
     {
@@ -319,7 +319,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterConfigProvider
+     * @return \Osf\Filter\Laminas\LaminasFilterConfigProvider
      */
     public static function newConfigProvider(...$args)
     {
@@ -327,7 +327,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterConfigProvider
+     * @return \Osf\Filter\Laminas\LaminasFilterConfigProvider
      */
     public static function getConfigProvider(...$args)
     {
@@ -351,7 +351,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDataUnitFormatter
+     * @return \Osf\Filter\Laminas\LaminasFilterDataUnitFormatter
      */
     public static function newDataUnitFormatter(...$args)
     {
@@ -359,7 +359,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDataUnitFormatter
+     * @return \Osf\Filter\Laminas\LaminasFilterDataUnitFormatter
      */
     public static function getDataUnitFormatter(...$args)
     {
@@ -367,7 +367,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterDateSelect
      */
     public static function newDateSelect(...$args)
     {
@@ -375,7 +375,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterDateSelect
      */
     public static function getDateSelect(...$args)
     {
@@ -383,7 +383,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateTimeFormatter
+     * @return \Osf\Filter\Laminas\LaminasFilterDateTimeFormatter
      */
     public static function newDateTimeFormatter(...$args)
     {
@@ -391,7 +391,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateTimeFormatter
+     * @return \Osf\Filter\Laminas\LaminasFilterDateTimeFormatter
      */
     public static function getDateTimeFormatter(...$args)
     {
@@ -399,7 +399,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateTimeSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterDateTimeSelect
      */
     public static function newDateTimeSelect(...$args)
     {
@@ -407,7 +407,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDateTimeSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterDateTimeSelect
      */
     public static function getDateTimeSelect(...$args)
     {
@@ -431,7 +431,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDecompress
+     * @return \Osf\Filter\Laminas\LaminasFilterDecompress
      */
     public static function newDecompress(...$args)
     {
@@ -439,7 +439,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDecompress
+     * @return \Osf\Filter\Laminas\LaminasFilterDecompress
      */
     public static function getDecompress(...$args)
     {
@@ -447,7 +447,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDecrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterDecrypt
      */
     public static function newDecrypt(...$args)
     {
@@ -455,7 +455,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDecrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterDecrypt
      */
     public static function getDecrypt(...$args)
     {
@@ -463,7 +463,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDigits
+     * @return \Osf\Filter\Laminas\LaminasFilterDigits
      */
     public static function newDigits(...$args)
     {
@@ -471,7 +471,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDigits
+     * @return \Osf\Filter\Laminas\LaminasFilterDigits
      */
     public static function getDigits(...$args)
     {
@@ -479,7 +479,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDir
+     * @return \Osf\Filter\Laminas\LaminasFilterDir
      */
     public static function newDir(...$args)
     {
@@ -487,7 +487,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterDir
+     * @return \Osf\Filter\Laminas\LaminasFilterDir
      */
     public static function getDir(...$args)
     {
@@ -495,7 +495,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterEncrypt
      */
     public static function newEncrypt(...$args)
     {
@@ -503,7 +503,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterEncrypt
      */
     public static function getEncrypt(...$args)
     {
@@ -511,7 +511,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptBlockCipher
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptBlockCipher
      */
     public static function newEncryptBlockCipher(...$args)
     {
@@ -519,7 +519,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptBlockCipher
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptBlockCipher
      */
     public static function getEncryptBlockCipher(...$args)
     {
@@ -527,7 +527,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptEncryptionAlgorithmInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptEncryptionAlgorithmInterface
      */
     public static function newEncryptEncryptionAlgorithmInterface(...$args)
     {
@@ -535,7 +535,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptEncryptionAlgorithmInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptEncryptionAlgorithmInterface
      */
     public static function getEncryptEncryptionAlgorithmInterface(...$args)
     {
@@ -543,7 +543,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptOpenssl
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptOpenssl
      */
     public static function newEncryptOpenssl(...$args)
     {
@@ -551,7 +551,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterEncryptOpenssl
+     * @return \Osf\Filter\Laminas\LaminasFilterEncryptOpenssl
      */
     public static function getEncryptOpenssl(...$args)
     {
@@ -559,7 +559,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileDecrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterFileDecrypt
      */
     public static function newFileDecrypt(...$args)
     {
@@ -567,7 +567,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileDecrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterFileDecrypt
      */
     public static function getFileDecrypt(...$args)
     {
@@ -575,7 +575,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileEncrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterFileEncrypt
      */
     public static function newFileEncrypt(...$args)
     {
@@ -583,7 +583,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileEncrypt
+     * @return \Osf\Filter\Laminas\LaminasFilterFileEncrypt
      */
     public static function getFileEncrypt(...$args)
     {
@@ -591,7 +591,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileLowerCase
+     * @return \Osf\Filter\Laminas\LaminasFilterFileLowerCase
      */
     public static function newFileLowerCase(...$args)
     {
@@ -599,7 +599,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileLowerCase
+     * @return \Osf\Filter\Laminas\LaminasFilterFileLowerCase
      */
     public static function getFileLowerCase(...$args)
     {
@@ -607,7 +607,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileRename
+     * @return \Osf\Filter\Laminas\LaminasFilterFileRename
      */
     public static function newFileRename(...$args)
     {
@@ -615,7 +615,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileRename
+     * @return \Osf\Filter\Laminas\LaminasFilterFileRename
      */
     public static function getFileRename(...$args)
     {
@@ -623,7 +623,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileRenameUpload
+     * @return \Osf\Filter\Laminas\LaminasFilterFileRenameUpload
      */
     public static function newFileRenameUpload(...$args)
     {
@@ -631,7 +631,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileRenameUpload
+     * @return \Osf\Filter\Laminas\LaminasFilterFileRenameUpload
      */
     public static function getFileRenameUpload(...$args)
     {
@@ -639,7 +639,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileUpperCase
+     * @return \Osf\Filter\Laminas\LaminasFilterFileUpperCase
      */
     public static function newFileUpperCase(...$args)
     {
@@ -647,7 +647,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFileUpperCase
+     * @return \Osf\Filter\Laminas\LaminasFilterFileUpperCase
      */
     public static function getFileUpperCase(...$args)
     {
@@ -655,7 +655,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterChain
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterChain
      */
     public static function newFilterChain(...$args)
     {
@@ -663,7 +663,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterChain
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterChain
      */
     public static function getFilterChain(...$args)
     {
@@ -671,7 +671,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterInterface
      */
     public static function newFilterInterface(...$args)
     {
@@ -679,7 +679,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterInterface
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterInterface
      */
     public static function getFilterInterface(...$args)
     {
@@ -687,7 +687,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterPluginManager
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterPluginManager
      */
     public static function newFilterPluginManager(...$args)
     {
@@ -695,7 +695,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterPluginManager
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterPluginManager
      */
     public static function getFilterPluginManager(...$args)
     {
@@ -703,7 +703,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterPluginManagerFactory
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterPluginManagerFactory
      */
     public static function newFilterPluginManagerFactory(...$args)
     {
@@ -711,7 +711,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterFilterPluginManagerFactory
+     * @return \Osf\Filter\Laminas\LaminasFilterFilterPluginManagerFactory
      */
     public static function getFilterPluginManagerFactory(...$args)
     {
@@ -719,7 +719,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterHtmlEntities
+     * @return \Osf\Filter\Laminas\LaminasFilterHtmlEntities
      */
     public static function newHtmlEntities(...$args)
     {
@@ -727,7 +727,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterHtmlEntities
+     * @return \Osf\Filter\Laminas\LaminasFilterHtmlEntities
      */
     public static function getHtmlEntities(...$args)
     {
@@ -735,7 +735,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterInflector
+     * @return \Osf\Filter\Laminas\LaminasFilterInflector
      */
     public static function newInflector(...$args)
     {
@@ -743,7 +743,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterInflector
+     * @return \Osf\Filter\Laminas\LaminasFilterInflector
      */
     public static function getInflector(...$args)
     {
@@ -751,7 +751,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterInt
+     * @return \Osf\Filter\Laminas\LaminasFilterInt
      */
     public static function newInt(...$args)
     {
@@ -759,7 +759,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterInt
+     * @return \Osf\Filter\Laminas\LaminasFilterInt
      */
     public static function getInt(...$args)
     {
@@ -783,7 +783,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterModule
+     * @return \Osf\Filter\Laminas\LaminasFilterModule
      */
     public static function newModule(...$args)
     {
@@ -791,7 +791,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterModule
+     * @return \Osf\Filter\Laminas\LaminasFilterModule
      */
     public static function getModule(...$args)
     {
@@ -799,7 +799,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterMonthSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterMonthSelect
      */
     public static function newMonthSelect(...$args)
     {
@@ -807,7 +807,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterMonthSelect
+     * @return \Osf\Filter\Laminas\LaminasFilterMonthSelect
      */
     public static function getMonthSelect(...$args)
     {
@@ -815,7 +815,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterNull
+     * @return \Osf\Filter\Laminas\LaminasFilterNull
      */
     public static function newNull(...$args)
     {
@@ -823,7 +823,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterNull
+     * @return \Osf\Filter\Laminas\LaminasFilterNull
      */
     public static function getNull(...$args)
     {
@@ -847,7 +847,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterPregReplace
+     * @return \Osf\Filter\Laminas\LaminasFilterPregReplace
      */
     public static function newPregReplace(...$args)
     {
@@ -855,7 +855,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterPregReplace
+     * @return \Osf\Filter\Laminas\LaminasFilterPregReplace
      */
     public static function getPregReplace(...$args)
     {
@@ -863,7 +863,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterRealPath
+     * @return \Osf\Filter\Laminas\LaminasFilterRealPath
      */
     public static function newRealPath(...$args)
     {
@@ -871,7 +871,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterRealPath
+     * @return \Osf\Filter\Laminas\LaminasFilterRealPath
      */
     public static function getRealPath(...$args)
     {
@@ -895,7 +895,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStaticFilter
+     * @return \Osf\Filter\Laminas\LaminasFilterStaticFilter
      */
     public static function newStaticFilter(...$args)
     {
@@ -903,7 +903,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStaticFilter
+     * @return \Osf\Filter\Laminas\LaminasFilterStaticFilter
      */
     public static function getStaticFilter(...$args)
     {
@@ -911,7 +911,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringToLower
+     * @return \Osf\Filter\Laminas\LaminasFilterStringToLower
      */
     public static function newStringToLower(...$args)
     {
@@ -919,7 +919,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringToLower
+     * @return \Osf\Filter\Laminas\LaminasFilterStringToLower
      */
     public static function getStringToLower(...$args)
     {
@@ -927,7 +927,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringToUpper
+     * @return \Osf\Filter\Laminas\LaminasFilterStringToUpper
      */
     public static function newStringToUpper(...$args)
     {
@@ -935,7 +935,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringToUpper
+     * @return \Osf\Filter\Laminas\LaminasFilterStringToUpper
      */
     public static function getStringToUpper(...$args)
     {
@@ -943,7 +943,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringTrim
+     * @return \Osf\Filter\Laminas\LaminasFilterStringTrim
      */
     public static function newStringTrim(...$args)
     {
@@ -951,7 +951,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStringTrim
+     * @return \Osf\Filter\Laminas\LaminasFilterStringTrim
      */
     public static function getStringTrim(...$args)
     {
@@ -959,7 +959,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStripNewlines
+     * @return \Osf\Filter\Laminas\LaminasFilterStripNewlines
      */
     public static function newStripNewlines(...$args)
     {
@@ -967,7 +967,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStripNewlines
+     * @return \Osf\Filter\Laminas\LaminasFilterStripNewlines
      */
     public static function getStripNewlines(...$args)
     {
@@ -975,7 +975,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStripTags
+     * @return \Osf\Filter\Laminas\LaminasFilterStripTags
      */
     public static function newStripTags(...$args)
     {
@@ -983,7 +983,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterStripTags
+     * @return \Osf\Filter\Laminas\LaminasFilterStripTags
      */
     public static function getStripTags(...$args)
     {
@@ -1007,7 +1007,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterToInt
+     * @return \Osf\Filter\Laminas\LaminasFilterToInt
      */
     public static function newToInt(...$args)
     {
@@ -1015,7 +1015,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterToInt
+     * @return \Osf\Filter\Laminas\LaminasFilterToInt
      */
     public static function getToInt(...$args)
     {
@@ -1023,7 +1023,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterToNull
+     * @return \Osf\Filter\Laminas\LaminasFilterToNull
      */
     public static function newToNull(...$args)
     {
@@ -1031,7 +1031,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterToNull
+     * @return \Osf\Filter\Laminas\LaminasFilterToNull
      */
     public static function getToNull(...$args)
     {
@@ -1055,7 +1055,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterUpperCaseWords
+     * @return \Osf\Filter\Laminas\LaminasFilterUpperCaseWords
      */
     public static function newUpperCaseWords(...$args)
     {
@@ -1063,7 +1063,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterUpperCaseWords
+     * @return \Osf\Filter\Laminas\LaminasFilterUpperCaseWords
      */
     public static function getUpperCaseWords(...$args)
     {
@@ -1071,7 +1071,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterUriNormalize
+     * @return \Osf\Filter\Laminas\LaminasFilterUriNormalize
      */
     public static function newUriNormalize(...$args)
     {
@@ -1079,7 +1079,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterUriNormalize
+     * @return \Osf\Filter\Laminas\LaminasFilterUriNormalize
      */
     public static function getUriNormalize(...$args)
     {
@@ -1087,7 +1087,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWhitelist
+     * @return \Osf\Filter\Laminas\LaminasFilterWhitelist
      */
     public static function newWhitelist(...$args)
     {
@@ -1095,7 +1095,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWhitelist
+     * @return \Osf\Filter\Laminas\LaminasFilterWhitelist
      */
     public static function getWhitelist(...$args)
     {
@@ -1103,7 +1103,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToDash
      */
     public static function newWordCamelCaseToDash(...$args)
     {
@@ -1111,7 +1111,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToDash
      */
     public static function getWordCamelCaseToDash(...$args)
     {
@@ -1119,7 +1119,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToSeparator
      */
     public static function newWordCamelCaseToSeparator(...$args)
     {
@@ -1127,7 +1127,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToSeparator
      */
     public static function getWordCamelCaseToSeparator(...$args)
     {
@@ -1135,7 +1135,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToUnderscore
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToUnderscore
      */
     public static function newWordCamelCaseToUnderscore(...$args)
     {
@@ -1143,7 +1143,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordCamelCaseToUnderscore
+     * @return \Osf\Filter\Laminas\LaminasFilterWordCamelCaseToUnderscore
      */
     public static function getWordCamelCaseToUnderscore(...$args)
     {
@@ -1151,7 +1151,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToCamelCase
      */
     public static function newWordDashToCamelCase(...$args)
     {
@@ -1159,7 +1159,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToCamelCase
      */
     public static function getWordDashToCamelCase(...$args)
     {
@@ -1167,7 +1167,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToSeparator
      */
     public static function newWordDashToSeparator(...$args)
     {
@@ -1175,7 +1175,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToSeparator
      */
     public static function getWordDashToSeparator(...$args)
     {
@@ -1183,7 +1183,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToUnderscore
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToUnderscore
      */
     public static function newWordDashToUnderscore(...$args)
     {
@@ -1191,7 +1191,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordDashToUnderscore
+     * @return \Osf\Filter\Laminas\LaminasFilterWordDashToUnderscore
      */
     public static function getWordDashToUnderscore(...$args)
     {
@@ -1199,7 +1199,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToCamelCase
      */
     public static function newWordSeparatorToCamelCase(...$args)
     {
@@ -1207,7 +1207,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToCamelCase
      */
     public static function getWordSeparatorToCamelCase(...$args)
     {
@@ -1215,7 +1215,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToDash
      */
     public static function newWordSeparatorToDash(...$args)
     {
@@ -1223,7 +1223,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToDash
      */
     public static function getWordSeparatorToDash(...$args)
     {
@@ -1231,7 +1231,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToSeparator
      */
     public static function newWordSeparatorToSeparator(...$args)
     {
@@ -1239,7 +1239,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordSeparatorToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordSeparatorToSeparator
      */
     public static function getWordSeparatorToSeparator(...$args)
     {
@@ -1247,7 +1247,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToCamelCase
      */
     public static function newWordUnderscoreToCamelCase(...$args)
     {
@@ -1255,7 +1255,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToCamelCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToCamelCase
      */
     public static function getWordUnderscoreToCamelCase(...$args)
     {
@@ -1263,7 +1263,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToDash
      */
     public static function newWordUnderscoreToDash(...$args)
     {
@@ -1271,7 +1271,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToDash
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToDash
      */
     public static function getWordUnderscoreToDash(...$args)
     {
@@ -1279,7 +1279,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToSeparator
      */
     public static function newWordUnderscoreToSeparator(...$args)
     {
@@ -1287,7 +1287,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToSeparator
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToSeparator
      */
     public static function getWordUnderscoreToSeparator(...$args)
     {
@@ -1295,7 +1295,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToStudlyCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToStudlyCase
      */
     public static function newWordUnderscoreToStudlyCase(...$args)
     {
@@ -1303,7 +1303,7 @@ abstract class Filter extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Filter\Zend\ZendFilterWordUnderscoreToStudlyCase
+     * @return \Osf\Filter\Laminas\LaminasFilterWordUnderscoreToStudlyCase
      */
     public static function getWordUnderscoreToStudlyCase(...$args)
     {

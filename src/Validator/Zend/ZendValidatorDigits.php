@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Digits;
+use Laminas\Validator\Digits;
 
 /**
  * Zend Class Digits inheritor

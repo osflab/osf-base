@@ -1,7 +1,7 @@
 <?php
 namespace Osf\Filter;
 
-use Zend\Filter\AbstractFilter as ZAF;
+use Laminas\Filter\AbstractFilter as ZAF;
 
 /**
  * OSF parent class for filters

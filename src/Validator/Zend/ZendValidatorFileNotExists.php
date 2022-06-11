@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\NotExists;
+use Laminas\Validator\File\NotExists;
 
 /**
  * Zend Class NotExists inheritor

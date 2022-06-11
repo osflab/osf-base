@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Uuid;
+use Laminas\Validator\Uuid;
 
 /**
  * Zend Class Uuid inheritor

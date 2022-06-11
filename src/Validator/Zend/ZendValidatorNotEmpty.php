@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\NotEmpty;
+use Laminas\Validator\NotEmpty;
 
 /**
  * Zend Class NotEmpty inheritor

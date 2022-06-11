@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\DashToUnderscore;
+use Laminas\Filter\Word\DashToUnderscore;
 
 /**
  * Zend Class DashToUnderscore inheritor

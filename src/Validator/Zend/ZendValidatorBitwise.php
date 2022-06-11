@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Bitwise;
+use Laminas\Validator\Bitwise;
 
 /**
  * Zend Class Bitwise inheritor

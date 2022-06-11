@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\StripTags;
+use Laminas\Filter\StripTags;
 
 /**
  * Zend Class StripTags inheritor

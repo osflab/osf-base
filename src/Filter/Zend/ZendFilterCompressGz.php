@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Gz;
+use Laminas\Filter\Compress\Gz;
 
 /**
  * Zend Class Gz inheritor

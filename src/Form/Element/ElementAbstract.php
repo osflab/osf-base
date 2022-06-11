@@ -1,10 +1,10 @@
 <?php
 namespace Osf\Form\Element;
 
-use Zend\Filter\FilterChain;
-use Zend\Validator\ValidatorChain;
-use Zend\Filter\FilterInterface;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Filter\FilterChain;
+use Laminas\Validator\ValidatorChain;
+use Laminas\Filter\FilterInterface;
+use Laminas\Validator\ValidatorInterface;
 use Osf\Form\Helper\AbstractFormHelper;
 use Osf\Exception\ArchException;
 use Osf\Form\AbstractForm;
@@ -252,7 +252,7 @@ class ElementAbstract implements ValidatorInterface
     }
     
     /**
-     * @return \Zend\Filter\FilterChain
+     * @return \Laminas\Filter\FilterChain
      */
     public function getFilters()
     {
@@ -263,7 +263,7 @@ class ElementAbstract implements ValidatorInterface
     }
     
     /**
-     * @return \Zend\Validator\ValidatorChain
+     * @return \Laminas\Validator\ValidatorChain
      */
     public function getValidators()
     {
@@ -318,7 +318,7 @@ class ElementAbstract implements ValidatorInterface
     /**
      * @param string $validatorClassName
      * @param int $index
-     * @return \Zend\Validator\AbstractValidator
+     * @return \Laminas\Validator\AbstractValidator
      */
     public function getValidator(string $validatorClassName, int $index = 0)
     {
@@ -330,7 +330,7 @@ class ElementAbstract implements ValidatorInterface
     /**
      * @param string $filterClassName
      * @param int $index
-     * @return \Zend\Filter\AbstractFilter
+     * @return \Laminas\Filter\AbstractFilter
      */
     public function getFilter(string $filterClassName, int $index = 0)
     {
@@ -356,10 +356,10 @@ class ElementAbstract implements ValidatorInterface
             throw new ArchException('Validator or filter instance required');
         }
         switch (true) {
-            case $filterOrValidator instanceof \Zend\Validator\AbstractValidator : 
+            case $filterOrValidator instanceof \Laminas\Validator\AbstractValidator :
                 $this->addValidator($filterOrValidator);
                 break;
-            case $filterOrValidator instanceof \Zend\Filter\AbstractFilter : 
+            case $filterOrValidator instanceof \Laminas\Filter\AbstractFilter :
                 $this->addFilter($filterOrValidator);
                 break;
             default : 

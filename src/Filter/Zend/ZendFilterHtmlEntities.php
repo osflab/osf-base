@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\HtmlEntities;
+use Laminas\Filter\HtmlEntities;
 
 /**
  * Zend Class HtmlEntities inheritor

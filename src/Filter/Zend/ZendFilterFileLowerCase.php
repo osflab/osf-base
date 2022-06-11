@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\File\LowerCase;
+use Laminas\Filter\File\LowerCase;
 
 /**
  * Zend Class LowerCase inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\RealPath;
+use Laminas\Filter\RealPath;
 
 /**
  * Zend Class RealPath inheritor

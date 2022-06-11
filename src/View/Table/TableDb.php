@@ -23,7 +23,7 @@ class TableDb extends Table
     protected $osfTable;
     
     /**
-     * @var \Zend\Db\Sql\Select
+     * @var \Laminas\Db\Sql\Select
      */
     protected $dbSelect;
     
@@ -91,7 +91,7 @@ class TableDb extends Table
     }
     
     /**
-     * @return \Zend\Db\Sql\Select
+     * @return \Laminas\Db\Sql\Select
      */
     public function getDbSelect()
     {
@@ -100,7 +100,7 @@ class TableDb extends Table
     
     /**
      * Execute query and get resultset
-     * @return \Zend\Db\ResultSet\ResultSetInterface
+     * @return \Laminas\Db\ResultSet\ResultSetInterface
      */
     public function execute()
     {

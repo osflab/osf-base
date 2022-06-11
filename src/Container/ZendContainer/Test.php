@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Container\ZendContainer;
+namespace Osf\Container\LaminasContainer;
 
-use Osf\Container\ZendContainer;
+use Osf\Container\LaminasContainer;
 use Osf\Test\Runner as OsfTest;
 
 /**
@@ -27,7 +27,7 @@ class Test extends OsfTest
 
             // Registered object
             $translator = ZendContainer::getTranslate(false);
-            self::assert($translator instanceof \Zend\I18n\Translator\Translator, 'Translator not found');
+            self::assert($translator instanceof \Laminas\I18n\Translator\Translator, 'Translator not found');
         }
         
         return self::getResult();

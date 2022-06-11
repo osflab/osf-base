@@ -1,8 +1,8 @@
 <?php
 namespace Osf\View;
 
-use Zend\View\Helper\HelperInterface as ZendHelperInterface;
-use Zend\View\Renderer\RendererInterface as Renderer;
+use Laminas\View\Helper\HelperInterface as LaminasHelperInterface;
+use Laminas\View\Renderer\RendererInterface as Renderer;
 
 /**
  * Interface for helper classes
@@ -37,7 +37,7 @@ interface HelperInterface
     /**
      * Set the View object
      * @param  Renderer $view
-     * @return ZendHelperInterface
+     * @return LaminasHelperInterface
      */
     public function setView(Renderer $view);
 
@@ -73,7 +73,7 @@ interface HelperInterface
      * Get a value from action controller
      * @param string $key
      * @param string $alternateContent displayd if $key not found
-     * @return multitype:
+     * @return mixed:
      */
     public function get($key, $alternateContent = '');
     

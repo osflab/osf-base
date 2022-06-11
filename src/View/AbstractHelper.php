@@ -3,8 +3,8 @@ namespace Osf\View;
 
 use Osf\Container\OsfContainer as Container;
 use Osf\Exception\ArchException;
-use Zend\View\Helper\HelperInterface;
-use Zend\View\Renderer\RendererInterface as Renderer;
+use Laminas\View\Helper\HelperInterface;
+use Laminas\View\Renderer\RendererInterface as Renderer;
 
 /**
  * View helpers super class
@@ -104,7 +104,7 @@ abstract class AbstractHelper implements HelperInterface
      */
     
     /**
-     * @return \Zend\View\Helper\EscapeHtml
+     * @return \Laminas\View\Helper\EscapeHtml
      */
     protected function getEscapeHtmlHelper()
     {
@@ -112,7 +112,7 @@ abstract class AbstractHelper implements HelperInterface
     }
     
     /**
-     * @return \Zend\View\Helper\EscapeHtmlAttr
+     * @return \Laminas\View\Helper\EscapeHtmlAttr
      */
     protected function getEscapeHtmlAttrHelper()
     {
@@ -120,7 +120,7 @@ abstract class AbstractHelper implements HelperInterface
     }
 
     /**
-     * @return \Zend\Form\View\Helper\FormLabel
+     * @return \Laminas\Form\View\Helper\FormLabel
      */
     protected function getLabelHelper()
     {
@@ -128,7 +128,7 @@ abstract class AbstractHelper implements HelperInterface
     }
 
     /**
-     * @return \Zend\Form\View\Helper\FormElement
+     * @return \Laminas\Form\View\Helper\FormElement
      */
     protected function getElementHelper()
     {
@@ -136,7 +136,7 @@ abstract class AbstractHelper implements HelperInterface
     }
 
     /**
-     * @return \Zend\Form\View\Helper\FormElementErrors
+     * @return \Laminas\Form\View\Helper\FormElementErrors
      */
     protected function getElementErrorsHelper()
     {

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Intelligentmail;
+use Laminas\Validator\Barcode\Intelligentmail;
 
 /**
  * Zend Class Intelligentmail inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Extension;
+use Laminas\Validator\File\Extension;
 
 /**
  * Zend Class Extension inheritor

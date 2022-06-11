@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Encrypt\BlockCipher;
+use Laminas\Filter\Encrypt\BlockCipher;
 
 /**
  * Zend Class BlockCipher inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\DataUnitFormatter;
+use Laminas\Filter\DataUnitFormatter;
 
 /**
  * Zend Class DataUnitFormatter inheritor

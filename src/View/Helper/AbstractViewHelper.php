@@ -2,7 +2,7 @@
 namespace Osf\View\Helper;
 
 use Osf\Exception\ArchException;
-use Zend\View\Renderer\RendererInterface;
+use Laminas\View\Renderer\RendererInterface;
 
 /**
  * Use this trait in other view traits to get the current view

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Upload;
+use Laminas\Validator\File\Upload;
 
 /**
  * Zend Class Upload inheritor

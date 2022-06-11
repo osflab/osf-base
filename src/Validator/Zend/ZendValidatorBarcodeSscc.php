@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Sscc;
+use Laminas\Validator\Barcode\Sscc;
 
 /**
  * Zend Class Sscc inheritor

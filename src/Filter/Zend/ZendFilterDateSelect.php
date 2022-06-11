@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\DateSelect;
+use Laminas\Filter\DateSelect;
 
 /**
  * Zend Class DateSelect inheritor

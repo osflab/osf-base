@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Issn;
+use Laminas\Validator\Barcode\Issn;
 
 /**
  * Zend Class Issn inheritor

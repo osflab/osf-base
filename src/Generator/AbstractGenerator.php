@@ -1,10 +1,10 @@
 <?php
 namespace Osf\Generator;
 
-use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\DocBlockGenerator;
-use Zend\Code\Generator\MethodGenerator;
-use Osf\Generator\Zend\ParameterGenerator;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Generator\MethodGenerator;
+use Osf\Generator\Laminas\ParameterGenerator;
 
 use ReflectionClass;
 use ReflectionMethod;
@@ -26,7 +26,7 @@ abstract class AbstractGenerator
      * @param string $extends
      * @param string $description
      * @param string $longDescription
-     * @return \Zend\Code\Generator\ClassGenerator
+     * @return \Laminas\Code\Generator\ClassGenerator
      */
     protected function buildClass($className, $extends, $description, $longDescription = null)
     {

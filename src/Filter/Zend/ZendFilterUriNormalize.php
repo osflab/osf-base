@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\UriNormalize;
+use Laminas\Filter\UriNormalize;
 
 /**
  * Zend Class UriNormalize inheritor

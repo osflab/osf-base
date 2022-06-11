@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hex;
+use Laminas\Validator\Hex;
 
 /**
  * Zend Class Hex inheritor

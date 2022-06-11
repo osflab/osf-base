@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\BaseName;
+use Laminas\Filter\BaseName;
 
 /**
  * Zend Class BaseName inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\StaticValidator;
+use Laminas\Validator\StaticValidator;
 
 /**
  * Zend Class StaticValidator inheritor

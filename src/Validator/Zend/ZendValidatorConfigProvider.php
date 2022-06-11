@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\ConfigProvider;
+use Laminas\Validator\ConfigProvider;
 
 /**
  * Zend Class ConfigProvider inheritor

@@ -16,121 +16,121 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
 {
 
     protected static $classes = [
-        'Alnum' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nAlnum',
-        'Alpha' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nAlpha',
-        'Barcode' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcode',
-        'BarcodeAdapterInterface' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeAdapterInterface',
-        'BarcodeCodabar' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCodabar',
-        'BarcodeCode128' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode128',
-        'BarcodeCode25' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode25',
-        'BarcodeCode25interleaved' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode25interleaved',
-        'BarcodeCode39' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode39',
-        'BarcodeCode39ext' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode39ext',
-        'BarcodeCode93' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode93',
-        'BarcodeCode93ext' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeCode93ext',
-        'BarcodeEan12' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan12',
-        'BarcodeEan13' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan13',
-        'BarcodeEan14' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan14',
-        'BarcodeEan18' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan18',
-        'BarcodeEan2' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan2',
-        'BarcodeEan5' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan5',
-        'BarcodeEan8' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeEan8',
-        'BarcodeGtin12' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeGtin12',
-        'BarcodeGtin13' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeGtin13',
-        'BarcodeGtin14' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeGtin14',
-        'BarcodeIdentcode' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeIdentcode',
-        'BarcodeIntelligentmail' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeIntelligentmail',
-        'BarcodeIssn' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeIssn',
-        'BarcodeItf14' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeItf14',
-        'BarcodeLeitcode' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeLeitcode',
-        'BarcodePlanet' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodePlanet',
-        'BarcodePostnet' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodePostnet',
-        'BarcodeRoyalmail' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeRoyalmail',
-        'BarcodeSscc' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeSscc',
-        'BarcodeUpca' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeUpca',
-        'BarcodeUpce' => '\\Osf\\Validator\\Zend\\ZendValidatorBarcodeUpce',
-        'Between' => '\\Osf\\Validator\\Zend\\ZendValidatorBetween',
+        'Alnum' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nAlnum',
+        'Alpha' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nAlpha',
+        'Barcode' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcode',
+        'BarcodeAdapterInterface' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeAdapterInterface',
+        'BarcodeCodabar' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCodabar',
+        'BarcodeCode128' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode128',
+        'BarcodeCode25' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode25',
+        'BarcodeCode25interleaved' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode25interleaved',
+        'BarcodeCode39' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode39',
+        'BarcodeCode39ext' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode39ext',
+        'BarcodeCode93' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode93',
+        'BarcodeCode93ext' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeCode93ext',
+        'BarcodeEan12' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan12',
+        'BarcodeEan13' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan13',
+        'BarcodeEan14' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan14',
+        'BarcodeEan18' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan18',
+        'BarcodeEan2' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan2',
+        'BarcodeEan5' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan5',
+        'BarcodeEan8' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeEan8',
+        'BarcodeGtin12' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeGtin12',
+        'BarcodeGtin13' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeGtin13',
+        'BarcodeGtin14' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeGtin14',
+        'BarcodeIdentcode' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeIdentcode',
+        'BarcodeIntelligentmail' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeIntelligentmail',
+        'BarcodeIssn' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeIssn',
+        'BarcodeItf14' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeItf14',
+        'BarcodeLeitcode' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeLeitcode',
+        'BarcodePlanet' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodePlanet',
+        'BarcodePostnet' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodePostnet',
+        'BarcodeRoyalmail' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeRoyalmail',
+        'BarcodeSscc' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeSscc',
+        'BarcodeUpca' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeUpca',
+        'BarcodeUpce' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBarcodeUpce',
+        'Between' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBetween',
         'Bic' => '\\Osf\\Validator\\Bic',
-        'Bitwise' => '\\Osf\\Validator\\Zend\\ZendValidatorBitwise',
-        'Callback' => '\\Osf\\Validator\\Zend\\ZendValidatorCallback',
-        'ConfigProvider' => '\\Osf\\Validator\\Zend\\ZendValidatorConfigProvider',
-        'CreditCard' => '\\Osf\\Validator\\Zend\\ZendValidatorCreditCard',
-        'Csrf' => '\\Osf\\Validator\\Zend\\ZendValidatorCsrf',
+        'Bitwise' => '\\Osf\\Validator\\Laminas\\LaminasValidatorBitwise',
+        'Callback' => '\\Osf\\Validator\\Laminas\\LaminasValidatorCallback',
+        'ConfigProvider' => '\\Osf\\Validator\\Laminas\\LaminasValidatorConfigProvider',
+        'CreditCard' => '\\Osf\\Validator\\Laminas\\LaminasValidatorCreditCard',
+        'Csrf' => '\\Osf\\Validator\\Laminas\\LaminasValidatorCsrf',
         'Currency' => '\\Osf\\Validator\\Currency',
-        'Date' => '\\Osf\\Validator\\Zend\\ZendValidatorDate',
-        'DateStep' => '\\Osf\\Validator\\Zend\\ZendValidatorDateStep',
-        'DateTime' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nDateTime',
-        'Digits' => '\\Osf\\Validator\\Zend\\ZendValidatorDigits',
+        'Date' => '\\Osf\\Validator\\Laminas\\LaminasValidatorDate',
+        'DateStep' => '\\Osf\\Validator\\Laminas\\LaminasValidatorDateStep',
+        'DateTime' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nDateTime',
+        'Digits' => '\\Osf\\Validator\\Laminas\\LaminasValidatorDigits',
         'EmailAddress' => '\\Osf\\Validator\\EmailAddress',
-        'Explode' => '\\Osf\\Validator\\Zend\\ZendValidatorExplode',
-        'FileCount' => '\\Osf\\Validator\\Zend\\ZendValidatorFileCount',
-        'FileCrc32' => '\\Osf\\Validator\\Zend\\ZendValidatorFileCrc32',
-        'FileExcludeExtension' => '\\Osf\\Validator\\Zend\\ZendValidatorFileExcludeExtension',
-        'FileExcludeMimeType' => '\\Osf\\Validator\\Zend\\ZendValidatorFileExcludeMimeType',
-        'FileExists' => '\\Osf\\Validator\\Zend\\ZendValidatorFileExists',
-        'FileExtension' => '\\Osf\\Validator\\Zend\\ZendValidatorFileExtension',
-        'FileFilesSize' => '\\Osf\\Validator\\Zend\\ZendValidatorFileFilesSize',
-        'FileHash' => '\\Osf\\Validator\\Zend\\ZendValidatorFileHash',
-        'FileImageSize' => '\\Osf\\Validator\\Zend\\ZendValidatorFileImageSize',
-        'FileIsCompressed' => '\\Osf\\Validator\\Zend\\ZendValidatorFileIsCompressed',
-        'FileIsImage' => '\\Osf\\Validator\\Zend\\ZendValidatorFileIsImage',
-        'FileMd5' => '\\Osf\\Validator\\Zend\\ZendValidatorFileMd5',
-        'FileMimeType' => '\\Osf\\Validator\\Zend\\ZendValidatorFileMimeType',
-        'FileNotExists' => '\\Osf\\Validator\\Zend\\ZendValidatorFileNotExists',
-        'FileSha1' => '\\Osf\\Validator\\Zend\\ZendValidatorFileSha1',
-        'FileSize' => '\\Osf\\Validator\\Zend\\ZendValidatorFileSize',
-        'FileUpload' => '\\Osf\\Validator\\Zend\\ZendValidatorFileUpload',
-        'FileUploadFile' => '\\Osf\\Validator\\Zend\\ZendValidatorFileUploadFile',
-        'FileWordCount' => '\\Osf\\Validator\\Zend\\ZendValidatorFileWordCount',
-        'Float' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nFloat',
-        'GpsPoint' => '\\Osf\\Validator\\Zend\\ZendValidatorGpsPoint',
-        'GreaterThan' => '\\Osf\\Validator\\Zend\\ZendValidatorGreaterThan',
-        'Hex' => '\\Osf\\Validator\\Zend\\ZendValidatorHex',
-        'Hostname' => '\\Osf\\Validator\\Zend\\ZendValidatorHostname',
-        'HostnameBiz' => '\\Osf\\Validator\\Zend\\ZendValidatorHostnameBiz',
-        'HostnameCn' => '\\Osf\\Validator\\Zend\\ZendValidatorHostnameCn',
-        'HostnameCom' => '\\Osf\\Validator\\Zend\\ZendValidatorHostnameCom',
-        'HostnameJp' => '\\Osf\\Validator\\Zend\\ZendValidatorHostnameJp',
-        'Iban' => '\\Osf\\Validator\\Zend\\ZendValidatorIban',
+        'Explode' => '\\Osf\\Validator\\Laminas\\LaminasValidatorExplode',
+        'FileCount' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileCount',
+        'FileCrc32' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileCrc32',
+        'FileExcludeExtension' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileExcludeExtension',
+        'FileExcludeMimeType' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileExcludeMimeType',
+        'FileExists' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileExists',
+        'FileExtension' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileExtension',
+        'FileFilesSize' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileFilesSize',
+        'FileHash' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileHash',
+        'FileImageSize' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileImageSize',
+        'FileIsCompressed' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileIsCompressed',
+        'FileIsImage' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileIsImage',
+        'FileMd5' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileMd5',
+        'FileMimeType' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileMimeType',
+        'FileNotExists' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileNotExists',
+        'FileSha1' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileSha1',
+        'FileSize' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileSize',
+        'FileUpload' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileUpload',
+        'FileUploadFile' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileUploadFile',
+        'FileWordCount' => '\\Osf\\Validator\\Laminas\\LaminasValidatorFileWordCount',
+        'Float' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nFloat',
+        'GpsPoint' => '\\Osf\\Validator\\Laminas\\LaminasValidatorGpsPoint',
+        'GreaterThan' => '\\Osf\\Validator\\Laminas\\LaminasValidatorGreaterThan',
+        'Hex' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHex',
+        'Hostname' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHostname',
+        'HostnameBiz' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHostnameBiz',
+        'HostnameCn' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHostnameCn',
+        'HostnameCom' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHostnameCom',
+        'HostnameJp' => '\\Osf\\Validator\\Laminas\\LaminasValidatorHostnameJp',
+        'Iban' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIban',
         'IbanFr' => '\\Osf\\Validator\\IbanFr',
-        'Identical' => '\\Osf\\Validator\\Zend\\ZendValidatorIdentical',
-        'InArray' => '\\Osf\\Validator\\Zend\\ZendValidatorInArray',
-        'Int' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nInt',
-        'Ip' => '\\Osf\\Validator\\Zend\\ZendValidatorIp',
-        'IsCountable' => '\\Osf\\Validator\\Zend\\ZendValidatorIsCountable',
-        'IsFloat' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nIsFloat',
-        'IsInstanceOf' => '\\Osf\\Validator\\Zend\\ZendValidatorIsInstanceOf',
-        'IsInt' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nIsInt',
-        'Isbn' => '\\Osf\\Validator\\Zend\\ZendValidatorIsbn',
-        'LessThan' => '\\Osf\\Validator\\Zend\\ZendValidatorLessThan',
-        'Module' => '\\Osf\\Validator\\Zend\\ZendValidatorModule',
-        'NotEmpty' => '\\Osf\\Validator\\Zend\\ZendValidatorNotEmpty',
+        'Identical' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIdentical',
+        'InArray' => '\\Osf\\Validator\\Laminas\\LaminasValidatorInArray',
+        'Int' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nInt',
+        'Ip' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIp',
+        'IsCountable' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIsCountable',
+        'IsFloat' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nIsFloat',
+        'IsInstanceOf' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIsInstanceOf',
+        'IsInt' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nIsInt',
+        'Isbn' => '\\Osf\\Validator\\Laminas\\LaminasValidatorIsbn',
+        'LessThan' => '\\Osf\\Validator\\Laminas\\LaminasValidatorLessThan',
+        'Module' => '\\Osf\\Validator\\Laminas\\LaminasValidatorModule',
+        'NotEmpty' => '\\Osf\\Validator\\Laminas\\LaminasValidatorNotEmpty',
         'Password' => '\\Osf\\Validator\\Password',
         'Percentage' => '\\Osf\\Validator\\Percentage',
-        'PhoneNumber' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nPhoneNumber',
-        'PostCode' => '\\Osf\\Validator\\Zend\\ZendValidatorI18nPostCode',
+        'PhoneNumber' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nPhoneNumber',
+        'PostCode' => '\\Osf\\Validator\\Laminas\\LaminasValidatorI18nPostCode',
         'PostalAddressBody' => '\\Osf\\Validator\\PostalAddressBody',
-        'Regex' => '\\Osf\\Validator\\Zend\\ZendValidatorRegex',
+        'Regex' => '\\Osf\\Validator\\Laminas\\LaminasValidatorRegex',
         'Rna' => '\\Osf\\Validator\\Rna',
         'Siret' => '\\Osf\\Validator\\Siret',
-        'StaticValidator' => '\\Osf\\Validator\\Zend\\ZendValidatorStaticValidator',
-        'Step' => '\\Osf\\Validator\\Zend\\ZendValidatorStep',
-        'StringLength' => '\\Osf\\Validator\\Zend\\ZendValidatorStringLength',
+        'StaticValidator' => '\\Osf\\Validator\\Laminas\\LaminasValidatorStaticValidator',
+        'Step' => '\\Osf\\Validator\\Laminas\\LaminasValidatorStep',
+        'StringLength' => '\\Osf\\Validator\\Laminas\\LaminasValidatorStringLength',
         'Telephone' => '\\Osf\\Validator\\Telephone',
-        'Timezone' => '\\Osf\\Validator\\Zend\\ZendValidatorTimezone',
+        'Timezone' => '\\Osf\\Validator\\Laminas\\LaminasValidatorTimezone',
         'TvaIntra' => '\\Osf\\Validator\\TvaIntra',
-        'Uri' => '\\Osf\\Validator\\Zend\\ZendValidatorUri',
-        'Uuid' => '\\Osf\\Validator\\Zend\\ZendValidatorUuid',
-        'ValidatorChain' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorChain',
-        'ValidatorInterface' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorInterface',
-        'ValidatorPluginManager' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorPluginManager',
-        'ValidatorPluginManagerAwareInterface' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorPluginManagerAwareInterface',
-        'ValidatorPluginManagerFactory' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorPluginManagerFactory',
-        'ValidatorProviderInterface' => '\\Osf\\Validator\\Zend\\ZendValidatorValidatorProviderInterface',
+        'Uri' => '\\Osf\\Validator\\Laminas\\LaminasValidatorUri',
+        'Uuid' => '\\Osf\\Validator\\Laminas\\LaminasValidatorUuid',
+        'ValidatorChain' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorChain',
+        'ValidatorInterface' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorInterface',
+        'ValidatorPluginManager' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorPluginManager',
+        'ValidatorPluginManagerAwareInterface' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorPluginManagerAwareInterface',
+        'ValidatorPluginManagerFactory' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorPluginManagerFactory',
+        'ValidatorProviderInterface' => '\\Osf\\Validator\\Laminas\\LaminasValidatorValidatorProviderInterface',
     ];
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nAlnum
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nAlnum
      */
     public static function newAlnum(...$args)
     {
@@ -138,7 +138,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nAlnum
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nAlnum
      */
     public static function getAlnum(...$args)
     {
@@ -146,7 +146,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nAlpha
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nAlpha
      */
     public static function newAlpha(...$args)
     {
@@ -154,7 +154,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nAlpha
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nAlpha
      */
     public static function getAlpha(...$args)
     {
@@ -162,7 +162,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcode
      */
     public static function newBarcode(...$args)
     {
@@ -170,7 +170,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcode
      */
     public static function getBarcode(...$args)
     {
@@ -178,7 +178,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeAdapterInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeAdapterInterface
      */
     public static function newBarcodeAdapterInterface(...$args)
     {
@@ -186,7 +186,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeAdapterInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeAdapterInterface
      */
     public static function getBarcodeAdapterInterface(...$args)
     {
@@ -194,7 +194,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCodabar
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCodabar
      */
     public static function newBarcodeCodabar(...$args)
     {
@@ -202,7 +202,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCodabar
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCodabar
      */
     public static function getBarcodeCodabar(...$args)
     {
@@ -210,7 +210,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode128
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode128
      */
     public static function newBarcodeCode128(...$args)
     {
@@ -218,7 +218,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode128
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode128
      */
     public static function getBarcodeCode128(...$args)
     {
@@ -226,7 +226,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode25
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode25
      */
     public static function newBarcodeCode25(...$args)
     {
@@ -234,7 +234,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode25
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode25
      */
     public static function getBarcodeCode25(...$args)
     {
@@ -242,7 +242,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode25interleaved
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode25interleaved
      */
     public static function newBarcodeCode25interleaved(...$args)
     {
@@ -250,7 +250,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode25interleaved
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode25interleaved
      */
     public static function getBarcodeCode25interleaved(...$args)
     {
@@ -258,7 +258,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode39
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode39
      */
     public static function newBarcodeCode39(...$args)
     {
@@ -266,7 +266,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode39
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode39
      */
     public static function getBarcodeCode39(...$args)
     {
@@ -274,7 +274,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode39ext
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode39ext
      */
     public static function newBarcodeCode39ext(...$args)
     {
@@ -282,7 +282,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode39ext
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode39ext
      */
     public static function getBarcodeCode39ext(...$args)
     {
@@ -290,7 +290,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode93
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode93
      */
     public static function newBarcodeCode93(...$args)
     {
@@ -298,7 +298,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode93
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode93
      */
     public static function getBarcodeCode93(...$args)
     {
@@ -306,7 +306,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode93ext
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode93ext
      */
     public static function newBarcodeCode93ext(...$args)
     {
@@ -314,7 +314,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeCode93ext
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeCode93ext
      */
     public static function getBarcodeCode93ext(...$args)
     {
@@ -322,7 +322,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan12
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan12
      */
     public static function newBarcodeEan12(...$args)
     {
@@ -330,7 +330,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan12
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan12
      */
     public static function getBarcodeEan12(...$args)
     {
@@ -338,7 +338,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan13
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan13
      */
     public static function newBarcodeEan13(...$args)
     {
@@ -346,7 +346,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan13
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan13
      */
     public static function getBarcodeEan13(...$args)
     {
@@ -354,7 +354,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan14
      */
     public static function newBarcodeEan14(...$args)
     {
@@ -362,7 +362,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan14
      */
     public static function getBarcodeEan14(...$args)
     {
@@ -370,7 +370,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan18
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan18
      */
     public static function newBarcodeEan18(...$args)
     {
@@ -378,7 +378,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan18
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan18
      */
     public static function getBarcodeEan18(...$args)
     {
@@ -386,7 +386,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan2
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan2
      */
     public static function newBarcodeEan2(...$args)
     {
@@ -394,7 +394,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan2
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan2
      */
     public static function getBarcodeEan2(...$args)
     {
@@ -402,7 +402,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan5
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan5
      */
     public static function newBarcodeEan5(...$args)
     {
@@ -410,7 +410,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan5
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan5
      */
     public static function getBarcodeEan5(...$args)
     {
@@ -418,7 +418,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan8
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan8
      */
     public static function newBarcodeEan8(...$args)
     {
@@ -426,7 +426,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeEan8
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeEan8
      */
     public static function getBarcodeEan8(...$args)
     {
@@ -434,7 +434,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin12
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin12
      */
     public static function newBarcodeGtin12(...$args)
     {
@@ -442,7 +442,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin12
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin12
      */
     public static function getBarcodeGtin12(...$args)
     {
@@ -450,7 +450,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin13
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin13
      */
     public static function newBarcodeGtin13(...$args)
     {
@@ -458,7 +458,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin13
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin13
      */
     public static function getBarcodeGtin13(...$args)
     {
@@ -466,7 +466,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin14
      */
     public static function newBarcodeGtin14(...$args)
     {
@@ -474,7 +474,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeGtin14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeGtin14
      */
     public static function getBarcodeGtin14(...$args)
     {
@@ -482,7 +482,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIdentcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIdentcode
      */
     public static function newBarcodeIdentcode(...$args)
     {
@@ -490,7 +490,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIdentcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIdentcode
      */
     public static function getBarcodeIdentcode(...$args)
     {
@@ -498,7 +498,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIntelligentmail
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIntelligentmail
      */
     public static function newBarcodeIntelligentmail(...$args)
     {
@@ -506,7 +506,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIntelligentmail
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIntelligentmail
      */
     public static function getBarcodeIntelligentmail(...$args)
     {
@@ -514,7 +514,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIssn
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIssn
      */
     public static function newBarcodeIssn(...$args)
     {
@@ -522,7 +522,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeIssn
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeIssn
      */
     public static function getBarcodeIssn(...$args)
     {
@@ -530,7 +530,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeItf14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeItf14
      */
     public static function newBarcodeItf14(...$args)
     {
@@ -538,7 +538,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeItf14
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeItf14
      */
     public static function getBarcodeItf14(...$args)
     {
@@ -546,7 +546,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeLeitcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeLeitcode
      */
     public static function newBarcodeLeitcode(...$args)
     {
@@ -554,7 +554,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeLeitcode
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeLeitcode
      */
     public static function getBarcodeLeitcode(...$args)
     {
@@ -562,7 +562,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodePlanet
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodePlanet
      */
     public static function newBarcodePlanet(...$args)
     {
@@ -570,7 +570,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodePlanet
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodePlanet
      */
     public static function getBarcodePlanet(...$args)
     {
@@ -578,7 +578,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodePostnet
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodePostnet
      */
     public static function newBarcodePostnet(...$args)
     {
@@ -586,7 +586,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodePostnet
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodePostnet
      */
     public static function getBarcodePostnet(...$args)
     {
@@ -594,7 +594,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeRoyalmail
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeRoyalmail
      */
     public static function newBarcodeRoyalmail(...$args)
     {
@@ -602,7 +602,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeRoyalmail
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeRoyalmail
      */
     public static function getBarcodeRoyalmail(...$args)
     {
@@ -610,7 +610,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeSscc
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeSscc
      */
     public static function newBarcodeSscc(...$args)
     {
@@ -618,7 +618,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeSscc
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeSscc
      */
     public static function getBarcodeSscc(...$args)
     {
@@ -626,7 +626,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeUpca
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeUpca
      */
     public static function newBarcodeUpca(...$args)
     {
@@ -634,7 +634,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeUpca
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeUpca
      */
     public static function getBarcodeUpca(...$args)
     {
@@ -642,7 +642,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeUpce
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeUpce
      */
     public static function newBarcodeUpce(...$args)
     {
@@ -650,7 +650,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBarcodeUpce
+     * @return \Osf\Validator\Laminas\LaminasValidatorBarcodeUpce
      */
     public static function getBarcodeUpce(...$args)
     {
@@ -658,7 +658,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBetween
+     * @return \Osf\Validator\Laminas\LaminasValidatorBetween
      */
     public static function newBetween(...$args)
     {
@@ -666,7 +666,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBetween
+     * @return \Osf\Validator\Laminas\LaminasValidatorBetween
      */
     public static function getBetween(...$args)
     {
@@ -690,7 +690,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBitwise
+     * @return \Osf\Validator\Laminas\LaminasValidatorBitwise
      */
     public static function newBitwise(...$args)
     {
@@ -698,7 +698,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorBitwise
+     * @return \Osf\Validator\Laminas\LaminasValidatorBitwise
      */
     public static function getBitwise(...$args)
     {
@@ -706,7 +706,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCallback
+     * @return \Osf\Validator\Laminas\LaminasValidatorCallback
      */
     public static function newCallback(...$args)
     {
@@ -714,7 +714,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCallback
+     * @return \Osf\Validator\Laminas\LaminasValidatorCallback
      */
     public static function getCallback(...$args)
     {
@@ -722,7 +722,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorConfigProvider
+     * @return \Osf\Validator\Laminas\LaminasValidatorConfigProvider
      */
     public static function newConfigProvider(...$args)
     {
@@ -730,7 +730,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorConfigProvider
+     * @return \Osf\Validator\Laminas\LaminasValidatorConfigProvider
      */
     public static function getConfigProvider(...$args)
     {
@@ -738,7 +738,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCreditCard
+     * @return \Osf\Validator\Laminas\LaminasValidatorCreditCard
      */
     public static function newCreditCard(...$args)
     {
@@ -746,7 +746,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCreditCard
+     * @return \Osf\Validator\Laminas\LaminasValidatorCreditCard
      */
     public static function getCreditCard(...$args)
     {
@@ -754,7 +754,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCsrf
+     * @return \Osf\Validator\Laminas\LaminasValidatorCsrf
      */
     public static function newCsrf(...$args)
     {
@@ -762,7 +762,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorCsrf
+     * @return \Osf\Validator\Laminas\LaminasValidatorCsrf
      */
     public static function getCsrf(...$args)
     {
@@ -786,7 +786,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDate
+     * @return \Osf\Validator\Laminas\LaminasValidatorDate
      */
     public static function newDate(...$args)
     {
@@ -794,7 +794,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDate
+     * @return \Osf\Validator\Laminas\LaminasValidatorDate
      */
     public static function getDate(...$args)
     {
@@ -802,7 +802,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDateStep
+     * @return \Osf\Validator\Laminas\LaminasValidatorDateStep
      */
     public static function newDateStep(...$args)
     {
@@ -810,7 +810,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDateStep
+     * @return \Osf\Validator\Laminas\LaminasValidatorDateStep
      */
     public static function getDateStep(...$args)
     {
@@ -818,7 +818,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nDateTime
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nDateTime
      */
     public static function newDateTime(...$args)
     {
@@ -826,7 +826,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nDateTime
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nDateTime
      */
     public static function getDateTime(...$args)
     {
@@ -834,7 +834,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDigits
+     * @return \Osf\Validator\Laminas\LaminasValidatorDigits
      */
     public static function newDigits(...$args)
     {
@@ -842,7 +842,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorDigits
+     * @return \Osf\Validator\Laminas\LaminasValidatorDigits
      */
     public static function getDigits(...$args)
     {
@@ -866,7 +866,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorExplode
+     * @return \Osf\Validator\Laminas\LaminasValidatorExplode
      */
     public static function newExplode(...$args)
     {
@@ -874,7 +874,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorExplode
+     * @return \Osf\Validator\Laminas\LaminasValidatorExplode
      */
     public static function getExplode(...$args)
     {
@@ -882,7 +882,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileCount
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileCount
      */
     public static function newFileCount(...$args)
     {
@@ -890,7 +890,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileCount
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileCount
      */
     public static function getFileCount(...$args)
     {
@@ -898,7 +898,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileCrc32
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileCrc32
      */
     public static function newFileCrc32(...$args)
     {
@@ -906,7 +906,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileCrc32
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileCrc32
      */
     public static function getFileCrc32(...$args)
     {
@@ -914,7 +914,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExcludeExtension
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExcludeExtension
      */
     public static function newFileExcludeExtension(...$args)
     {
@@ -922,7 +922,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExcludeExtension
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExcludeExtension
      */
     public static function getFileExcludeExtension(...$args)
     {
@@ -930,7 +930,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExcludeMimeType
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExcludeMimeType
      */
     public static function newFileExcludeMimeType(...$args)
     {
@@ -938,7 +938,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExcludeMimeType
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExcludeMimeType
      */
     public static function getFileExcludeMimeType(...$args)
     {
@@ -946,7 +946,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExists
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExists
      */
     public static function newFileExists(...$args)
     {
@@ -954,7 +954,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExists
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExists
      */
     public static function getFileExists(...$args)
     {
@@ -962,7 +962,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExtension
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExtension
      */
     public static function newFileExtension(...$args)
     {
@@ -970,7 +970,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileExtension
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileExtension
      */
     public static function getFileExtension(...$args)
     {
@@ -978,7 +978,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileFilesSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileFilesSize
      */
     public static function newFileFilesSize(...$args)
     {
@@ -986,7 +986,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileFilesSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileFilesSize
      */
     public static function getFileFilesSize(...$args)
     {
@@ -994,7 +994,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileHash
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileHash
      */
     public static function newFileHash(...$args)
     {
@@ -1002,7 +1002,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileHash
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileHash
      */
     public static function getFileHash(...$args)
     {
@@ -1010,7 +1010,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileImageSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileImageSize
      */
     public static function newFileImageSize(...$args)
     {
@@ -1018,7 +1018,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileImageSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileImageSize
      */
     public static function getFileImageSize(...$args)
     {
@@ -1026,7 +1026,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileIsCompressed
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileIsCompressed
      */
     public static function newFileIsCompressed(...$args)
     {
@@ -1034,7 +1034,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileIsCompressed
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileIsCompressed
      */
     public static function getFileIsCompressed(...$args)
     {
@@ -1042,7 +1042,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileIsImage
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileIsImage
      */
     public static function newFileIsImage(...$args)
     {
@@ -1050,7 +1050,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileIsImage
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileIsImage
      */
     public static function getFileIsImage(...$args)
     {
@@ -1058,7 +1058,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileMd5
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileMd5
      */
     public static function newFileMd5(...$args)
     {
@@ -1066,7 +1066,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileMd5
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileMd5
      */
     public static function getFileMd5(...$args)
     {
@@ -1074,7 +1074,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileMimeType
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileMimeType
      */
     public static function newFileMimeType(...$args)
     {
@@ -1082,7 +1082,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileMimeType
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileMimeType
      */
     public static function getFileMimeType(...$args)
     {
@@ -1090,7 +1090,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileNotExists
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileNotExists
      */
     public static function newFileNotExists(...$args)
     {
@@ -1098,7 +1098,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileNotExists
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileNotExists
      */
     public static function getFileNotExists(...$args)
     {
@@ -1106,7 +1106,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileSha1
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileSha1
      */
     public static function newFileSha1(...$args)
     {
@@ -1114,7 +1114,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileSha1
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileSha1
      */
     public static function getFileSha1(...$args)
     {
@@ -1122,7 +1122,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileSize
      */
     public static function newFileSize(...$args)
     {
@@ -1130,7 +1130,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileSize
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileSize
      */
     public static function getFileSize(...$args)
     {
@@ -1138,7 +1138,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileUpload
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileUpload
      */
     public static function newFileUpload(...$args)
     {
@@ -1146,7 +1146,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileUpload
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileUpload
      */
     public static function getFileUpload(...$args)
     {
@@ -1154,7 +1154,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileUploadFile
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileUploadFile
      */
     public static function newFileUploadFile(...$args)
     {
@@ -1162,7 +1162,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileUploadFile
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileUploadFile
      */
     public static function getFileUploadFile(...$args)
     {
@@ -1170,7 +1170,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileWordCount
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileWordCount
      */
     public static function newFileWordCount(...$args)
     {
@@ -1178,7 +1178,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorFileWordCount
+     * @return \Osf\Validator\Laminas\LaminasValidatorFileWordCount
      */
     public static function getFileWordCount(...$args)
     {
@@ -1186,7 +1186,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nFloat
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nFloat
      */
     public static function newFloat(...$args)
     {
@@ -1194,7 +1194,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nFloat
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nFloat
      */
     public static function getFloat(...$args)
     {
@@ -1202,7 +1202,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorGpsPoint
+     * @return \Osf\Validator\Laminas\LaminasValidatorGpsPoint
      */
     public static function newGpsPoint(...$args)
     {
@@ -1210,7 +1210,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorGpsPoint
+     * @return \Osf\Validator\Laminas\LaminasValidatorGpsPoint
      */
     public static function getGpsPoint(...$args)
     {
@@ -1218,7 +1218,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorGreaterThan
+     * @return \Osf\Validator\Laminas\LaminasValidatorGreaterThan
      */
     public static function newGreaterThan(...$args)
     {
@@ -1226,7 +1226,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorGreaterThan
+     * @return \Osf\Validator\Laminas\LaminasValidatorGreaterThan
      */
     public static function getGreaterThan(...$args)
     {
@@ -1234,7 +1234,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHex
+     * @return \Osf\Validator\Laminas\LaminasValidatorHex
      */
     public static function newHex(...$args)
     {
@@ -1242,7 +1242,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHex
+     * @return \Osf\Validator\Laminas\LaminasValidatorHex
      */
     public static function getHex(...$args)
     {
@@ -1250,7 +1250,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostname
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostname
      */
     public static function newHostname(...$args)
     {
@@ -1258,7 +1258,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostname
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostname
      */
     public static function getHostname(...$args)
     {
@@ -1266,7 +1266,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameBiz
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameBiz
      */
     public static function newHostnameBiz(...$args)
     {
@@ -1274,7 +1274,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameBiz
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameBiz
      */
     public static function getHostnameBiz(...$args)
     {
@@ -1282,7 +1282,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameCn
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameCn
      */
     public static function newHostnameCn(...$args)
     {
@@ -1290,7 +1290,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameCn
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameCn
      */
     public static function getHostnameCn(...$args)
     {
@@ -1298,7 +1298,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameCom
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameCom
      */
     public static function newHostnameCom(...$args)
     {
@@ -1306,7 +1306,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameCom
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameCom
      */
     public static function getHostnameCom(...$args)
     {
@@ -1314,7 +1314,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameJp
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameJp
      */
     public static function newHostnameJp(...$args)
     {
@@ -1322,7 +1322,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorHostnameJp
+     * @return \Osf\Validator\Laminas\LaminasValidatorHostnameJp
      */
     public static function getHostnameJp(...$args)
     {
@@ -1330,7 +1330,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIban
+     * @return \Osf\Validator\Laminas\LaminasValidatorIban
      */
     public static function newIban(...$args)
     {
@@ -1338,7 +1338,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIban
+     * @return \Osf\Validator\Laminas\LaminasValidatorIban
      */
     public static function getIban(...$args)
     {
@@ -1362,7 +1362,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIdentical
+     * @return \Osf\Validator\Laminas\LaminasValidatorIdentical
      */
     public static function newIdentical(...$args)
     {
@@ -1370,7 +1370,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIdentical
+     * @return \Osf\Validator\Laminas\LaminasValidatorIdentical
      */
     public static function getIdentical(...$args)
     {
@@ -1378,7 +1378,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorInArray
+     * @return \Osf\Validator\Laminas\LaminasValidatorInArray
      */
     public static function newInArray(...$args)
     {
@@ -1386,7 +1386,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorInArray
+     * @return \Osf\Validator\Laminas\LaminasValidatorInArray
      */
     public static function getInArray(...$args)
     {
@@ -1394,7 +1394,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nInt
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nInt
      */
     public static function newInt(...$args)
     {
@@ -1402,7 +1402,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nInt
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nInt
      */
     public static function getInt(...$args)
     {
@@ -1410,7 +1410,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIp
+     * @return \Osf\Validator\Laminas\LaminasValidatorIp
      */
     public static function newIp(...$args)
     {
@@ -1418,7 +1418,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIp
+     * @return \Osf\Validator\Laminas\LaminasValidatorIp
      */
     public static function getIp(...$args)
     {
@@ -1426,7 +1426,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsCountable
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsCountable
      */
     public static function newIsCountable(...$args)
     {
@@ -1434,7 +1434,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsCountable
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsCountable
      */
     public static function getIsCountable(...$args)
     {
@@ -1442,7 +1442,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nIsFloat
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nIsFloat
      */
     public static function newIsFloat(...$args)
     {
@@ -1450,7 +1450,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nIsFloat
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nIsFloat
      */
     public static function getIsFloat(...$args)
     {
@@ -1458,7 +1458,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsInstanceOf
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsInstanceOf
      */
     public static function newIsInstanceOf(...$args)
     {
@@ -1466,7 +1466,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsInstanceOf
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsInstanceOf
      */
     public static function getIsInstanceOf(...$args)
     {
@@ -1474,7 +1474,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nIsInt
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nIsInt
      */
     public static function newIsInt(...$args)
     {
@@ -1482,7 +1482,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nIsInt
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nIsInt
      */
     public static function getIsInt(...$args)
     {
@@ -1490,7 +1490,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsbn
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsbn
      */
     public static function newIsbn(...$args)
     {
@@ -1498,7 +1498,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorIsbn
+     * @return \Osf\Validator\Laminas\LaminasValidatorIsbn
      */
     public static function getIsbn(...$args)
     {
@@ -1506,7 +1506,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorLessThan
+     * @return \Osf\Validator\Laminas\LaminasValidatorLessThan
      */
     public static function newLessThan(...$args)
     {
@@ -1514,7 +1514,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorLessThan
+     * @return \Osf\Validator\Laminas\LaminasValidatorLessThan
      */
     public static function getLessThan(...$args)
     {
@@ -1522,7 +1522,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorModule
+     * @return \Osf\Validator\Laminas\LaminasValidatorModule
      */
     public static function newModule(...$args)
     {
@@ -1530,7 +1530,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorModule
+     * @return \Osf\Validator\Laminas\LaminasValidatorModule
      */
     public static function getModule(...$args)
     {
@@ -1538,7 +1538,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorNotEmpty
+     * @return \Osf\Validator\Laminas\LaminasValidatorNotEmpty
      */
     public static function newNotEmpty(...$args)
     {
@@ -1546,7 +1546,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorNotEmpty
+     * @return \Osf\Validator\Laminas\LaminasValidatorNotEmpty
      */
     public static function getNotEmpty(...$args)
     {
@@ -1586,7 +1586,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nPhoneNumber
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nPhoneNumber
      */
     public static function newPhoneNumber(...$args)
     {
@@ -1594,7 +1594,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nPhoneNumber
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nPhoneNumber
      */
     public static function getPhoneNumber(...$args)
     {
@@ -1602,7 +1602,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nPostCode
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nPostCode
      */
     public static function newPostCode(...$args)
     {
@@ -1610,7 +1610,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorI18nPostCode
+     * @return \Osf\Validator\Laminas\LaminasValidatorI18nPostCode
      */
     public static function getPostCode(...$args)
     {
@@ -1634,7 +1634,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorRegex
+     * @return \Osf\Validator\Laminas\LaminasValidatorRegex
      */
     public static function newRegex(...$args)
     {
@@ -1642,7 +1642,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorRegex
+     * @return \Osf\Validator\Laminas\LaminasValidatorRegex
      */
     public static function getRegex(...$args)
     {
@@ -1682,7 +1682,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStaticValidator
+     * @return \Osf\Validator\Laminas\LaminasValidatorStaticValidator
      */
     public static function newStaticValidator(...$args)
     {
@@ -1690,7 +1690,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStaticValidator
+     * @return \Osf\Validator\Laminas\LaminasValidatorStaticValidator
      */
     public static function getStaticValidator(...$args)
     {
@@ -1698,7 +1698,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStep
+     * @return \Osf\Validator\Laminas\LaminasValidatorStep
      */
     public static function newStep(...$args)
     {
@@ -1706,7 +1706,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStep
+     * @return \Osf\Validator\Laminas\LaminasValidatorStep
      */
     public static function getStep(...$args)
     {
@@ -1714,7 +1714,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStringLength
+     * @return \Osf\Validator\Laminas\LaminasValidatorStringLength
      */
     public static function newStringLength(...$args)
     {
@@ -1722,7 +1722,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorStringLength
+     * @return \Osf\Validator\Laminas\LaminasValidatorStringLength
      */
     public static function getStringLength(...$args)
     {
@@ -1746,7 +1746,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorTimezone
+     * @return \Osf\Validator\Laminas\LaminasValidatorTimezone
      */
     public static function newTimezone(...$args)
     {
@@ -1754,7 +1754,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorTimezone
+     * @return \Osf\Validator\Laminas\LaminasValidatorTimezone
      */
     public static function getTimezone(...$args)
     {
@@ -1778,7 +1778,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorUri
+     * @return \Osf\Validator\Laminas\LaminasValidatorUri
      */
     public static function newUri(...$args)
     {
@@ -1786,7 +1786,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorUri
+     * @return \Osf\Validator\Laminas\LaminasValidatorUri
      */
     public static function getUri(...$args)
     {
@@ -1794,7 +1794,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorUuid
+     * @return \Osf\Validator\Laminas\LaminasValidatorUuid
      */
     public static function newUuid(...$args)
     {
@@ -1802,7 +1802,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorUuid
+     * @return \Osf\Validator\Laminas\LaminasValidatorUuid
      */
     public static function getUuid(...$args)
     {
@@ -1810,7 +1810,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorChain
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorChain
      */
     public static function newValidatorChain(...$args)
     {
@@ -1818,7 +1818,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorChain
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorChain
      */
     public static function getValidatorChain(...$args)
     {
@@ -1826,7 +1826,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorInterface
      */
     public static function newValidatorInterface(...$args)
     {
@@ -1834,7 +1834,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorInterface
      */
     public static function getValidatorInterface(...$args)
     {
@@ -1842,7 +1842,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManager
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManager
      */
     public static function newValidatorPluginManager(...$args)
     {
@@ -1850,7 +1850,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManager
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManager
      */
     public static function getValidatorPluginManager(...$args)
     {
@@ -1858,7 +1858,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManagerAwareInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManagerAwareInterface
      */
     public static function newValidatorPluginManagerAwareInterface(...$args)
     {
@@ -1866,7 +1866,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManagerAwareInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManagerAwareInterface
      */
     public static function getValidatorPluginManagerAwareInterface(...$args)
     {
@@ -1874,7 +1874,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManagerFactory
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManagerFactory
      */
     public static function newValidatorPluginManagerFactory(...$args)
     {
@@ -1882,7 +1882,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorPluginManagerFactory
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorPluginManagerFactory
      */
     public static function getValidatorPluginManagerFactory(...$args)
     {
@@ -1890,7 +1890,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorProviderInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorProviderInterface
      */
     public static function newValidatorProviderInterface(...$args)
     {
@@ -1898,7 +1898,7 @@ abstract class Validator extends \Osf\Generator\AbstractBuilder
     }
 
     /**
-     * @return \Osf\Validator\Zend\ZendValidatorValidatorProviderInterface
+     * @return \Osf\Validator\Laminas\LaminasValidatorValidatorProviderInterface
      */
     public static function getValidatorProviderInterface(...$args)
     {

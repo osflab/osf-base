@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\FilterPluginManagerFactory;
+use Laminas\Filter\FilterPluginManagerFactory;
 
 /**
  * Zend Class FilterPluginManagerFactory inheritor

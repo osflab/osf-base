@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Callback;
+use Laminas\Filter\Callback;
 
 /**
  * Zend Class Callback inheritor

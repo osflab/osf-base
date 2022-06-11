@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Inflector;
+use Laminas\Filter\Inflector;
 
 /**
  * Zend Class Inflector inheritor

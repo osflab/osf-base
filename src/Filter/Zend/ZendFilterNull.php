@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Null;
+use Laminas\Filter\Null;
 
 /**
  * Zend Class Null inheritor

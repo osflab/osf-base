@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Royalmail;
+use Laminas\Validator\Barcode\Royalmail;
 
 /**
  * Zend Class Royalmail inheritor

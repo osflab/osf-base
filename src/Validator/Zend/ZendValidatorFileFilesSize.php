@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\FilesSize;
+use Laminas\Validator\File\FilesSize;
 
 /**
  * Zend Class FilesSize inheritor

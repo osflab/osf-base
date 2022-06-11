@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\I18n\Validator\PostCode;
+use Laminas\I18n\Validator\PostCode;
 
 /**
  * Zend Class PostCode inheritor

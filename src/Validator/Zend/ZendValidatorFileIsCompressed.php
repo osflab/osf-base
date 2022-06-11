@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\IsCompressed;
+use Laminas\Validator\File\IsCompressed;
 
 /**
  * Zend Class IsCompressed inheritor

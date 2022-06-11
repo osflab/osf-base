@@ -1,10 +1,12 @@
 <?php
 namespace Osf\Db;
 
-use Zend\Db\Sql\Select as ZendSelect;
+use Laminas\Db\ResultSet\ResultSetInterface;
+use Laminas\Db\Sql\Select as LaminasSelect;
+use Osf\Db\Table\AbstractTableGateway;
 
 /**
- * Select from Zend
+ * Select from Laminas
  *
  * @author Guillaume Ponçon <guillaume.poncon@openstates.com>
  * @copyright OpenStates
@@ -13,13 +15,13 @@ use Zend\Db\Sql\Select as ZendSelect;
  * @package osf
  * @subpackage select
  */
-class Select extends ZendSelect
+class Select extends LaminasSelect
 {
+    protected AbstractTableGateway $osfTable;
+
     /**
-     * @var Table\AbstractTableGateway
+     * @param AbstractTableGateway $table
      */
-    protected $osfTable;
-    
     public function __construct(Table\AbstractTableGateway $table)
     {
         $this->osfTable = $table;
@@ -29,7 +31,7 @@ class Select extends ZendSelect
     /**
      * @return ResultSetInterface
      */
-    public function execute()
+    public function execute(): ResultSetInterface
     {
         return $this->osfTable->selectWith($this);
     }

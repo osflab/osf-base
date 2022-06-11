@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\CamelCaseToSeparator;
+use Laminas\Filter\Word\CamelCaseToSeparator;
 
 /**
  * Zend Class CamelCaseToSeparator inheritor

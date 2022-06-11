@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Md5;
+use Laminas\Validator\File\Md5;
 
 /**
  * Zend Class Md5 inheritor

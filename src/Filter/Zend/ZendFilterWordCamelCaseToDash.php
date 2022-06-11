@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\CamelCaseToDash;
+use Laminas\Filter\Word\CamelCaseToDash;
 
 /**
  * Zend Class CamelCaseToDash inheritor

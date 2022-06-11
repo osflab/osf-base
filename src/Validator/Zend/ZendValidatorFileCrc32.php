@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Crc32;
+use Laminas\Validator\File\Crc32;
 
 /**
  * Zend Class Crc32 inheritor

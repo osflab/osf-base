@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\CreditCard;
+use Laminas\Validator\CreditCard;
 
 /**
  * Zend Class CreditCard inheritor

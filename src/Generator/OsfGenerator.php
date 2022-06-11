@@ -1,10 +1,10 @@
 <?php
 namespace Osf\Generator;
 
-use Zend\Code\Generator\MethodGenerator;
-use Zend\Code\Generator\ParameterGenerator;
-use Zend\Code\Reflection\MethodReflection;
-use Zend\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\MethodGenerator;
+use Laminas\Code\Generator\ParameterGenerator;
+use Laminas\Code\Reflection\MethodReflection;
+use Laminas\Code\Generator\ClassGenerator;
 
 /**
  * Osf resources generation for quick and fast access

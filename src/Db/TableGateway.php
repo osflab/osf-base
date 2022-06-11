@@ -1,17 +1,19 @@
 <?php
+
 namespace Osf\Db;
 
-use Osf\Container\ZendContainer;
+use Laminas\Filter\ToInt;
+use Laminas\I18n\Validator\IsFloat;
+use Laminas\I18n\Validator\IsInt;
+use Osf\Container\LaminasContainer;
 use Osf\Exception\ArchException;
-use Zend\Db\Sql\TableIdentifier;
-use Zend\I18n\Validator\Float;
-use Zend\I18n\Validator\Int;
-use Zend\Validator\NotEmpty;
-use Zend\Validator\StringLength;
-use Zend\Db\TableGateway\AbstractTableGateway;
+use Laminas\Db\Sql\TableIdentifier;
+use Laminas\Validator\NotEmpty;
+use Laminas\Validator\StringLength;
+use Laminas\Db\TableGateway\AbstractTableGateway;
 
 /**
- * Table gateway from Zend
+ * Table gateway from Laminas
  *
  * @author Guillaume Ponçon <guillaume.poncon@openstates.com>
  * @copyright OpenStates
@@ -24,24 +26,27 @@ class TableGateway extends AbstractTableGateway
 {
     const PRIMARY_KEY_FIELD = 'id';
     
-    protected $schema = null;
-    protected $values = array();
-    protected $fields = array();
-    
+    protected ?string $schema = null;
+    protected array $values = [];
+    protected array $fields = [];
+
+    /**
+     * @throws ArchException
+     */
     public function __construct($table = null, $adapterName = null)
     {
         if ($table !== null && !is_int($table) && !is_array($table)) {
             if (!(is_string($table) || $table instanceof TableIdentifier)) {
                 throw new ArchException(
-                        'Table name must be a string or an instance of Zend\Db\Sql\TableIdentifier');
+                        'Table name must be a string or an instance of Laminas\Db\Sql\TableIdentifier');
             }
             $this->table = $table;
         }
         if ($adapterName !== null) {
-            $this->adapter = ZendContainer::getDbAdapter($adapterName);
+            $this->adapter = LaminasContainer::getDbAdapter($adapterName);
         } else {
             if (! isset($this->adapter)) {
-                $this->adapter = ZendContainer::getDbAdapter($this->schema);
+                $this->adapter = LaminasContainer::getDbAdapter($this->schema);
             }
         }
         if (is_int($table) || is_array($table)) {
@@ -52,8 +57,8 @@ class TableGateway extends AbstractTableGateway
     /**
      * Load a row from an array or a primary key
      * @param int|array $data
+     * @return TableGateway
      * @throws ArchException
-     * @return \Osf\Db\TableGateway
      */
     public function load($data)
     {
@@ -94,11 +99,11 @@ class TableGateway extends AbstractTableGateway
     
     /**
      * Populate from array or arrayobject
-     * @param unknown_type $values
+     * @param array $values
+     * @return TableGateway
      * @throws ArchException
-     * @return \Osf\Db\TableGateway
      */
-    public function populate($values)
+    public function populate(array $values)
     {
         foreach ($values as $key => $value) {
             if (!array_key_exists($key, $this->values)) {
@@ -106,6 +111,7 @@ class TableGateway extends AbstractTableGateway
             }
             $this->set($key, $value);
         }
+
         return $this;
     }
     
@@ -116,9 +122,9 @@ class TableGateway extends AbstractTableGateway
 
     /**
      * Generate validators from metadata
-     * @param string $fieldname            
-     * @throws OpenStates_Exception
+     * @param string $fieldname
      * @return array
+     * @throws ArchException
      */
     public function buildValidators($fieldname = null)
     {
@@ -155,25 +161,7 @@ class TableGateway extends AbstractTableGateway
             case 'DEC':
             case 'DECIMAL':
                 $scale = (int) $fieldMetaData['SCALE'];
-                if ($scale == 0 && $fieldMetaData['DATA_TYPE'] != 'FLOAT') {
-                    $validators[] = new Int();
-                    // $validators[] = new Zend_Validate_StringLength(0, (int)
-                // $fieldMetaData['LENGTH'], 'UTF-8');
-                } else {
-                    $validators[] = new Float();
-                    // $validators[] = new Zend_Validate_StringLength(0, ((int)
-                // $fieldMetaData['LENGTH']) + 1, 'UTF-8');
-                }
-                // $precision = (int) $fieldMetaData['PRECISION'];
-                // if ($precision) {
-                // $max = 255 * ((int) $precision - (int) $scale);
-                // if ($fieldMetaData['UNSIGNED']) {
-                // $validators[] = new Zend_Validate_Between(0, $max, false);
-                // } else {
-                // $validators[] = new Zend_Validate_Between(-($max / 255), $max
-                // / 255, false);
-                // }
-                // }
+                $validators[] = $scale == 0 && $fieldMetaData['DATA_TYPE'] != 'FLOAT' ? new IsInt() : new IsFloat();
                 break;
             default:
         }
@@ -182,9 +170,9 @@ class TableGateway extends AbstractTableGateway
 
     /**
      * Generate filters from metadata
-     * @param string $fieldname            
-     * @throws OpenStates_Exception
+     * @param string $fieldname
      * @return array
+     * @throws ArchException
      */
     public function buildFilters($fieldname = null)
     {
@@ -213,7 +201,7 @@ class TableGateway extends AbstractTableGateway
                 break;
             case 'NUMBER':
             case 'NUMERIC':
-                $filters[] = new \Zend\Filter\Int();
+                $filters[] = new ToInt();
                 break;
             case 'FLOAT':
             case 'DEC':
@@ -227,9 +215,9 @@ class TableGateway extends AbstractTableGateway
 
     /**
      * Additional attributes for form filter and validation
-     * @param string $fieldname            
-     * @throws OpenStates_Exception
+     * @param string $fieldname
      * @return array [[<field>]][<fieldtype>][<attrkey>] = <attrvalue>
+     * @throws ArchException
      */
     public function buildAttribs($fieldname = null)
     {

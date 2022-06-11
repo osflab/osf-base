@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Date;
+use Laminas\Validator\Date;
 
 /**
  * Zend Class Date inheritor

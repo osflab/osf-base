@@ -1,8 +1,10 @@
 <?php
 namespace Osf\Application;
 
-use Zend\Permissions\Acl\Acl as ZendAcl;
-use Zend\Permissions\Acl\Role\GenericRole as Role;
+use Laminas\Permissions\Acl\Acl as LaminasAcl;
+use Laminas\Permissions\Acl\Resource\ResourceInterface;
+use Laminas\Permissions\Acl\Role\GenericRole as Role;
+use Laminas\Permissions\Acl\Role\RoleInterface;
 
 /**
  * High level ACL for OSF webapps
@@ -14,7 +16,7 @@ use Zend\Permissions\Acl\Role\GenericRole as Role;
  * @package osf
  * @subpackage acl
  */
-class Acl extends ZendAcl
+class Acl extends LaminasAcl
 {
     // Resource separator: controller_action
     const RSEP = '_';
@@ -24,9 +26,9 @@ class Acl extends ZendAcl
     const ROLE_NOT_LOGGED = 'NOTLOGGED'; // Not logged in users
     const ROLE_ADMIN      = 'ADMIN';     // Administrators (no limit)
     
-    protected $builded = false;
-    protected $aclConfigFile;
-    protected $config;
+    protected bool $builded = false;
+    protected string $aclConfigFile;
+    protected array $config;
     
     /**
      * @param string $aclConfigFile
@@ -127,10 +129,10 @@ class Acl extends ZendAcl
         }
         return $this;
     }
-    
+
     /**
      * Is current user (default) is admin ?
-     * @param string $email
+     * @param string|null $email
      * @return bool
      */
     public function isAdmin(?string $email = null): bool
@@ -140,12 +142,12 @@ class Acl extends ZendAcl
         }
         return in_array($email, $this->getConfig()['admin']);
     }
-    
+
     /**
      * Is current user (defaut) allowed to access request params ?
-     * @param string $controller
-     * @param string $action
-     * @param string $role
+     * @param string|null $controller
+     * @param string|null $action
+     * @param string|null $role
      * @return bool
      */
     public function isAllowedParams(?string $controller = null, ?string $action = null, ?string $role = null): bool
@@ -164,32 +166,12 @@ class Acl extends ZendAcl
         return $controller !== null ? $controller . ($action !== null ? self::RSEP . $action : '') : null;
     }
     
-    // Zend Acl heritages
+    // Laminas Acl heritages
     
     /**
-     * Returns true if and only if the Role has access to the Resource
-     *
-     * The $role and $resource parameters may be references to, or the string identifiers for,
-     * an existing Resource and Role combination.
-     *
-     * If either $role or $resource is null, then the query applies to all Roles or all Resources,
-     * respectively. Both may be null to query whether the ACL has a "blacklist" rule
-     * (allow everything to all). By default, Zend\Permissions\Acl creates a "whitelist" rule (deny
-     * everything to all), and this method would return false unless this default has
-     * been overridden (i.e., by executing $acl->allow()).
-     *
-     * If a $privilege is not provided, then this method returns false if and only if the
-     * Role is denied access to at least one privilege upon the Resource. In other words, this
-     * method returns true if and only if the Role is allowed all privileges on the Resource.
-     *
-     * This method checks Role inheritance using a depth-first traversal of the Role registry.
-     * The highest priority parent (i.e., the parent most recently added) is checked first,
-     * and its respective parents are checked similarly before the lower-priority parents of
-     * the Role are checked.
-     *
-     * @param  Role\RoleInterface|string            $role
-     * @param  Resource\ResourceInterface|string    $resource
-     * @param  string                               $privilege
+     * @param  RoleInterface|string $role
+     * @param  ResourceInterface|string $resource
+     * @param  string $privilege
      * @return bool
      */
     public function isAllowed($role = null, $resource = null, $privilege = null)
@@ -202,18 +184,9 @@ class Acl extends ZendAcl
     }
     
     /**
-     * Returns true if and only if $resource inherits from $inherit
-     *
-     * Both parameters may be either a Resource or a Resource identifier. If
-     * $onlyParent is true, then $resource must inherit directly from
-     * $inherit in order to return true. By default, this method looks
-     * through the entire inheritance tree to determine whether $resource
-     * inherits from $inherit through its ancestor Resources.
-     *
-     * @param  Resource\ResourceInterface|string    $resource
-     * @param  Resource\ResourceInterface|string    inherit
-     * @param  bool                              $onlyParent
-     * @throws Exception\InvalidArgumentException
+     * @param  ResourceInterface|string $resource
+     * @param  ResourceInterface|string inherit
+     * @param  bool $onlyParent
      * @return bool
      */
     public function inheritsResource($resource, $inherit, $onlyParent = false)
@@ -223,16 +196,8 @@ class Acl extends ZendAcl
     }
     
     /**
-     * Returns true if and only if $role inherits from $inherit
-     *
-     * Both parameters may be either a Role or a Role identifier. If
-     * $onlyParents is true, then $role must inherit directly from
-     * $inherit in order to return true. By default, this method looks
-     * through the entire inheritance DAG to determine whether $role
-     * inherits from $inherit through its ancestor Roles.
-     *
-     * @param  Role\RoleInterface|string    $role
-     * @param  Role\RoleInterface|string    $inherit ! behind = not inherits
+     * @param  RoleInterface|string    $role
+     * @param  RoleInterface|string    $inherit ! behind = not inherits
      * @param  bool                      $onlyParents
      * @return bool
      */

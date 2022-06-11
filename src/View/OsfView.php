@@ -1,9 +1,9 @@
 <?php
 namespace Osf\View;
 
-use Zend\View\Renderer\RendererInterface;
-use Zend\View\Resolver\ResolverInterface;
-use Zend\View\Model\ModelInterface;
+use Laminas\View\Renderer\RendererInterface;
+use Laminas\View\Resolver\ResolverInterface;
+use Laminas\View\Model\ModelInterface;
 use Osf\Container\OsfContainer as Container;
 use Osf\Exception\ArchException;
 use Osf\Stream\Text as T;

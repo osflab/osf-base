@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Dir;
+use Laminas\Filter\Dir;
 
 /**
  * Zend Class Dir inheritor

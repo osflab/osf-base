@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\PregReplace;
+use Laminas\Filter\PregReplace;
 
 /**
  * Zend Class PregReplace inheritor

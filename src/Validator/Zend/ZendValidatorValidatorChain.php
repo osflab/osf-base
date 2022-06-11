@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\ValidatorChain;
+use Laminas\Validator\ValidatorChain;
 
 /**
  * Zend Class ValidatorChain inheritor

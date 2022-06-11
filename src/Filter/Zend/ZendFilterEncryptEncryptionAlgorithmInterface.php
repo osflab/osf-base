@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Encrypt\EncryptionAlgorithmInterface;
+use Laminas\Filter\Encrypt\EncryptionAlgorithmInterface;
 
 /**
  * Zend Class EncryptionAlgorithmInterface inheritor

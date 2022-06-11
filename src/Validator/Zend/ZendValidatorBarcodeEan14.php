@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Ean14;
+use Laminas\Validator\Barcode\Ean14;
 
 /**
  * Zend Class Ean14 inheritor

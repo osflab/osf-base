@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Ean5;
+use Laminas\Validator\Barcode\Ean5;
 
 /**
  * Zend Class Ean5 inheritor

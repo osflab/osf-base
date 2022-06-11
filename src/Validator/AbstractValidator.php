@@ -1,7 +1,7 @@
 <?php
 namespace Osf\Validator;
 
-use Zend\Validator\AbstractValidator as ZAF;
+use Laminas\Validator\AbstractValidator as ZAF;
 
 /**
  * OSF Validators parent class

@@ -1,11 +1,11 @@
 <?php 
 namespace Osf\View\Helper\Bootstrap;
 
-use Zend\Paginator\Adapter\Iterator as PaginatorIterator;
-use Zend\Paginator\Adapter\DbTableGateway;
-use Zend\Paginator\Adapter\ArrayAdapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Paginator\Paginator;
+use Laminas\Paginator\Adapter\Iterator as PaginatorIterator;
+use Laminas\Paginator\Adapter\DbTableGateway;
+use Laminas\Paginator\Adapter\ArrayAdapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Paginator\Paginator;
 use Osf\View\Helper\Bootstrap\AbstractViewHelper as AVH;
 use Osf\View\Helper\Addon\EltDecoration;
 use Osf\Db\Row\AbstractRowGateway;
@@ -131,8 +131,8 @@ class Table extends AVH
             case is_array($data) : 
                 $adapter = new ArrayAdapter($data);
                 break;
-//            case $data instanceof \Zend\Db\Sql\Select : 
-//                $adapter = new \Zend\Paginator\Adapter\DbSelect($data);
+//            case $data instanceof \Laminas\Db\Sql\Select :
+//                $adapter = new \Laminas\Paginator\Adapter\DbSelect($data);
 //                break;
             case $data instanceof TableGateway : 
                 $adapter = new DbTableGateway($data);

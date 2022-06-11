@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Code39ext;
+use Laminas\Validator\Barcode\Code39ext;
 
 /**
  * Zend Class Code39ext inheritor

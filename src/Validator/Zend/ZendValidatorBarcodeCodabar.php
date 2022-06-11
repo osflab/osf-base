@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Codabar;
+use Laminas\Validator\Barcode\Codabar;
 
 /**
  * Zend Class Codabar inheritor

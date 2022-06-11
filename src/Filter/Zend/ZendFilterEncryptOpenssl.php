@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Encrypt\Openssl;
+use Laminas\Filter\Encrypt\Openssl;
 
 /**
  * Zend Class Openssl inheritor

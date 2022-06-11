@@ -1,12 +1,14 @@
 <?php
 namespace Osf\Application {
 
-use Osf\Container\ZendContainer;
+    use Laminas\I18n\Translator\Translator;
+    use Osf\Container\LaminasContainer;
 use Osf\Controller\Router;
 use Osf\Container\OsfContainer as Container;
 use Osf\Application\Locale;
+    use Osf\Exception\ArchException;
 
-/**
+    /**
  * Bootstrap super class for application bootstraps
  *
  * @author Guillaume Ponçon <guillaume.poncon@openstates.com>
@@ -23,33 +25,34 @@ abstract class Bootstrap
     
     abstract public function bootstrap();
     
-    protected static $translatorBuilded = false;
-    
+    protected static bool $translatorBuilt = false;
+
     /**
      * Build default translator and __ function to translate anywhere
      * To call in the subclass
      * @param string $type
      * @param string $pattern
-     * @return \Zend\I18n\Translator\Translator
+     * @return Translator
+     * @throws ArchException
      */
     protected function buildTranslate(
-        $type    = self::DEFAULT_TRANSLATE_TYPE, 
-        $pattern = self::DEFAULT_TRANSLATE_PATTERN)
+        string $type    = self::DEFAULT_TRANSLATE_TYPE,
+        string $pattern = self::DEFAULT_TRANSLATE_PATTERN): Translator
     {
         $lang = Container::getLocale()->getLangKey();
-        $translator = ZendContainer::getTranslate(false);
+        $translator = LaminasContainer::getTranslate(false);
         $translator->setLocale($lang);
         
         if (defined('APPLICATION_PATH')) {
             $baseDir = APPLICATION_PATH . '/App/' . Router::getDefaultControllerName(true);
             $vTranslationFile = realpath(APPLICATION_PATH 
-                    . '/../vendor/zendframework/zend-i18n-resources/languages/' 
-                    . $lang . '/Zend_Validate.php');
+                    . '/../vendor/laminas/laminas-i18n-resources/languages/'
+                    . $lang . '/Laminas_Validate.php');
             $translator->addTranslationFile('PhpArray', $vTranslationFile);
             $translator->addTranslationFilePattern($type, $baseDir, $pattern);
-            $translator->setCache(Container::getCache()->getZendStorage());
+            $translator->setCache(Container::getCache()->getLaminasStorage());
         }
-        self::$translatorBuilded = true;
+        self::$translatorBuilt = true;
         return $translator;
     }
     
@@ -69,15 +72,16 @@ abstract class Bootstrap
             date_default_timezone_set('Europe/Paris');
             setlocale(LC_TIME, 'fr_FR.UTF-8','fra');
         }
+
         return Container::getLocale();
     }
     
     /**
      * @return bool
      */
-    public static function isTranslatorBuilded():bool
+    public static function isTranslatorBuilt():bool
     {
-        return self::$translatorBuilded;
+        return self::$translatorBuilt;
     }
 }
 
@@ -85,10 +89,14 @@ abstract class Bootstrap
 
 // The __ function for quick translation
 namespace {
+
+    use Osf\Application\Bootstrap;
+    use Osf\Container\LaminasContainer;
+
     if (!function_exists('__')) {
         function __($message) {
-            if (\Osf\Application\Bootstrap::isTranslatorBuilded()) {
-                return \Osf\Container\ZendContainer::getTranslate()->translate($message);
+            if (Bootstrap::isTranslatorBuilt()) {
+                return LaminasContainer::getTranslate()->translate($message);
             }
             return $message;
         }

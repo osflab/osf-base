@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hostname\Cn;
+use Laminas\Validator\Hostname\Cn;
 
 /**
  * Zend Class Cn inheritor

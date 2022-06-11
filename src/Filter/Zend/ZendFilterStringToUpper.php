@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\StringToUpper;
+use Laminas\Filter\StringToUpper;
 
 /**
  * Zend Class StringToUpper inheritor

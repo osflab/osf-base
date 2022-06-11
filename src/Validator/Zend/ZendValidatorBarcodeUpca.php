@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Upca;
+use Laminas\Validator\Barcode\Upca;
 
 /**
  * Zend Class Upca inheritor

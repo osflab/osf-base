@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Sha1;
+use Laminas\Validator\File\Sha1;
 
 /**
  * Zend Class Sha1 inheritor

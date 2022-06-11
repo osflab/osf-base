@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\MimeType;
+use Laminas\Validator\File\MimeType;
 
 /**
  * Zend Class MimeType inheritor

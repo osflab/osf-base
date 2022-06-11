@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Code128;
+use Laminas\Validator\Barcode\Code128;
 
 /**
  * Zend Class Code128 inheritor

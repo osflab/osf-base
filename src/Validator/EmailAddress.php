@@ -1,7 +1,7 @@
 <?php
 namespace Osf\Validator;
 
-use Zend\Validator\EmailAddress as ZEA;
+use Laminas\Validator\EmailAddress as ZEA;
 
 /**
  * Email Address simplified validator

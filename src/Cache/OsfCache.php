@@ -1,12 +1,13 @@
 <?php
 namespace Osf\Cache;
 
-use Zend\Cache\Storage\Adapter\Redis as RedisAdapter;
-use Zend\Cache\Storage\Adapter\RedisOptions;
+use Laminas\Cache\Storage\Adapter\Redis as RedisAdapter;
+use Laminas\Cache\Storage\Adapter\RedisOptions;
 use Osf\Container\OsfContainer as Container;
 use Osf\Cache\InvalidArgumentException;
 use Osf\Cache\RedisResourceManager;
 use Osf\Container\VendorContainer;
+use Osf\Exception\ArchException;
 use Psr\SimpleCache\CacheInterface;
 use Redis;
 
@@ -250,14 +251,15 @@ class OsfCache implements CacheInterface
         }
         return $this->redis;
     }
-    
+
     /**
      * Build and return a zend cache storage using OSF cache configuration
      * @staticvar array $storages
      * @param string $namespace
-     * @return \Zend\Cache\Storage\Adapter\Redis
+     * @return RedisAdapter
+     * @throws ArchException
      */
-    public function getZendStorage(string $namespace = 'default')
+    public function getLaminasStorage(string $namespace = 'default'): RedisAdapter
     {
         static $storages = [];
         
@@ -269,6 +271,7 @@ class OsfCache implements CacheInterface
             $options->setResourceManager($rrm);
             $storages[$namespace] = new RedisAdapter($options);
         }
+
         return $storages[$namespace];
     }
     

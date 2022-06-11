@@ -1,13 +1,15 @@
 <?php
 namespace Osf\Cache;
 
-use Zend\Cache\Storage\Adapter\RedisResourceManager as ZRRM;
+use Laminas\Cache\Storage\Adapter\RedisResourceManager as LRRM;
 use Osf\Exception\ArchException;
 use Redis;
+use Traversable;
 
 /**
- * Zend RedisResourceManager overload, which not detectd the Redis connection
+ * Laminas RedisResourceManager overload, which not detectd the Redis connection
  *
+ * @deprecated LRRM is now final
  * @author Guillaume Ponçon <guillaume.poncon@openstates.com>
  * @copyright OpenStates
  * @version 1.0
@@ -15,14 +17,13 @@ use Redis;
  * @package osf
  * @subpackage cache
  */
-class RedisResourceManager extends ZRRM
+class RedisResourceManager extends LRRM
 {
     /**
-     * Set a resource
-     *
      * @param string $id
      * @param array|Traversable|RedisResource $resource
      * @return RedisResourceManager Fluent interface
+     * @throws ArchException
      */
     public function setResource($id, $resource)
     {

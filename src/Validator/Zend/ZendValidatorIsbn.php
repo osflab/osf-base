@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Isbn;
+use Laminas\Validator\Isbn;
 
 /**
  * Zend Class Isbn inheritor

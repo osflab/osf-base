@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\CompressionAlgorithmInterface;
+use Laminas\Filter\Compress\CompressionAlgorithmInterface;
 
 /**
  * Zend Class CompressionAlgorithmInterface inheritor

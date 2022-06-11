@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\InArray;
+use Laminas\Validator\InArray;
 
 /**
  * Zend Class InArray inheritor

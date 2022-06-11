@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\UnderscoreToStudlyCase;
+use Laminas\Filter\Word\UnderscoreToStudlyCase;
 
 /**
  * Zend Class UnderscoreToStudlyCase inheritor

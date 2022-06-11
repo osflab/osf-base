@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\ExcludeMimeType;
+use Laminas\Validator\File\ExcludeMimeType;
 
 /**
  * Zend Class ExcludeMimeType inheritor

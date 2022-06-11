@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\UnderscoreToCamelCase;
+use Laminas\Filter\Word\UnderscoreToCamelCase;
 
 /**
  * Zend Class UnderscoreToCamelCase inheritor

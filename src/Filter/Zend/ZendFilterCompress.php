@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress;
+use Laminas\Filter\Compress;
 
 /**
  * Zend Class Compress inheritor

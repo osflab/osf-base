@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Code25interleaved;
+use Laminas\Validator\Barcode\Code25interleaved;
 
 /**
  * Zend Class Code25interleaved inheritor

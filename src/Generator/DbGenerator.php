@@ -1,17 +1,17 @@
 <?php 
 namespace Osf\Generator;
 
-use Zend\Code\Generator\ParameterGenerator;
-use Zend\Code\Generator\PropertyGenerator;
-use Zend\Code\Generator\DocBlockGenerator;
-use Zend\Code\Generator\MethodGenerator;
-use Zend\Db\Metadata\Object\TableObject;
-use Zend\Db\Metadata\Metadata;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Code\Generator\ParameterGenerator;
+use Laminas\Code\Generator\PropertyGenerator;
+use Laminas\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Generator\MethodGenerator;
+use Laminas\Db\Metadata\Object\TableObject;
+use Laminas\Db\Metadata\Metadata;
+use Laminas\Db\Adapter\Adapter;
 use Osf\Container\AbstractContainer;
 use Osf\Exception\ArchException;
 use Osf\Stream\Text as T;
-use Osf\Container\ZendContainer;
+use Osf\Container\LaminasContainer;
 use Osf\Container\OsfContainer as C;
 
 /**
@@ -26,21 +26,21 @@ use Osf\Container\OsfContainer as C;
 class DbGenerator extends AbstractGenerator
 {
     /**
-     * @var \Zend\Db\Adapter\Adapter
+     * @var Adapter
      */
     protected $dbAdapter = null;
     protected $params = [];
     protected $tablesComments = [];
 
     /**
-     * @param Adapter $adapter
-     * @param array $params
+     * @param Adapter|null $adapter
+     * @param null $params
      * @throws ArchException
      */
     public function __construct(Adapter $adapter = null, $params = null)
     {
         if ($adapter === null) {
-            $adapter = ZendContainer::getDbAdapter();
+            $adapter = LaminasContainer::getDbAdapter();
         }
         if (!$adapter || !($adapter instanceof Adapter)) {
             throw new ArchException('Adapter is required (auto detection failed), only pgsql for the moment');
@@ -222,7 +222,7 @@ class DbGenerator extends AbstractGenerator
             // Récupération des triggers
             $triggers = [];
             foreach ($metadata->getTriggers() as $trigger) {
-                //$trigger = new \Zend\Db\Metadata\Object\TriggerObject();
+                //$trigger = new \Laminas\Db\Metadata\Object\TriggerObject();
                 //var_dump($trigger); exit;
                 if ($trigger->getEventObjectTable() != $tableName) {
                     continue;
@@ -295,7 +295,7 @@ class DbGenerator extends AbstractGenerator
             // Méthodes d'accès aux enregistrements des clés étrangères internes
             if (array_key_exists($tableName, $internalConstraints)) {
                 foreach ($internalConstraints[$tableName] as $constraint) {
-                    //$constraint = new \Zend\Db\Metadata\Object\ConstraintObject();
+                    //$constraint = new \Laminas\Db\Metadata\Object\ConstraintObject();
                     $methodName  = 'getRelated' . T::camelCase($constraint->getReferencedTableName()) . 'RowFrom';
                     $methodName .= T::camelCase($constraint->getColumns()[0]) . 'Fk';
                     $tableGateway = "\\Sma\\Db\\DbContainer::get" . T::camelCase($constraint->getReferencedTableName()) . $tableType . '()';
@@ -309,7 +309,7 @@ class DbGenerator extends AbstractGenerator
             // Méthodes d'accès aux enregistrements des clés étrangères externes
 //            if (array_key_exists($tableName, $externalConstraints)) {
 //                foreach ($externalConstraints[$tableName] as $constraint) {
-//                    //$constraint = new \Zend\Db\Metadata\Object\ConstraintObject();
+//                    //$constraint = new \Laminas\Db\Metadata\Object\ConstraintObject();
 //                    $methodName  = 'getRelated' . T::camelCase($constraint->getTableName()) . 'RowsFrom';
 //                    $methodName .= T::camelCase($constraint->getColumns()[0]) . 'Fk';
 //                    $tableGateway = "\\Sma\\Db\\DbContainer::get" . T::camelCase($constraint->getTableName()) . $tableType . '()';
@@ -317,7 +317,7 @@ class DbGenerator extends AbstractGenerator
 //                    $methodBody = 'return $this->getExternalFkRows(' . $tableGateway . ', \'' 
 //                                . $constraint->getColumns()[0] . '\', ' 
 //                                . $valueGetter . ', \'' . $constraint->getReferencedColumns()[0] . '\');';
-//                    $docBlock = "@return \\Zend\\Db\\ResultSet\\HydratingResultSet";
+//                    $docBlock = "@return \\Laminas\\Db\\ResultSet\\HydratingResultSet";
 //                    $classRow->addMethod($methodName, array(), MethodGenerator::FLAG_PUBLIC, $methodBody, $docBlock);
 //                }
 //            }

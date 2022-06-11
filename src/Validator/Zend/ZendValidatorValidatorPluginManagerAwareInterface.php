@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\ValidatorPluginManagerAwareInterface;
+use Laminas\Validator\ValidatorPluginManagerAwareInterface;
 
 /**
  * Zend Class ValidatorPluginManagerAwareInterface inheritor

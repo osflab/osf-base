@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\StringLength;
+use Laminas\Validator\StringLength;
 
 /**
  * Zend Class StringLength inheritor

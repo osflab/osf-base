@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\EmailAddress;
+use Laminas\Validator\EmailAddress;
 
 /**
  * Zend Class EmailAddress inheritor

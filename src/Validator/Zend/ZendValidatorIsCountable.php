@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\IsCountable;
+use Laminas\Validator\IsCountable;
 
 /**
  * Zend Class IsCountable inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Gtin13;
+use Laminas\Validator\Barcode\Gtin13;
 
 /**
  * Zend Class Gtin13 inheritor

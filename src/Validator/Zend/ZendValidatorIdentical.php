@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Identical;
+use Laminas\Validator\Identical;
 
 /**
  * Zend Class Identical inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Csrf;
+use Laminas\Validator\Csrf;
 
 /**
  * Zend Class Csrf inheritor

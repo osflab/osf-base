@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Explode;
+use Laminas\Validator\Explode;
 
 /**
  * Zend Class Explode inheritor

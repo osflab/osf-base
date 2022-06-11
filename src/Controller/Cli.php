@@ -5,9 +5,9 @@ namespace Osf\Controller {
     use Osf\Console\ConsoleHelper as ConsoleBase;
     use Osf\Application\OsfApplication as Application;
     use Osf\Generator\DbGenerator;
-    use Osf\Generator\ZendGenerator;
+    use Osf\Generator\LaminasGenerator;
     use Osf\Generator\OsfGenerator;
-    use Osf\Container\ZendContainer;
+    use Osf\Container\LaminasContainer;
     use Osf\Stream\Text as T;
     use Osf\Test\Runner as OsfTest;
 
@@ -254,7 +254,7 @@ namespace Osf\Controller {
 // Call of __ or simulation if the application component is not available
 namespace {
     if (class_exists('\Osf\Application\Bootstrap')) {
-        Osf\Application\Bootstrap::isTranslatorBuilded();
+        Osf\Application\Bootstrap::isTranslatorBuilt();
     }
     if (!function_exists('__')) {
         function __($txt) {

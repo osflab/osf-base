@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\MonthSelect;
+use Laminas\Filter\MonthSelect;
 
 /**
  * Zend Class MonthSelect inheritor

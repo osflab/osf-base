@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Exists;
+use Laminas\Validator\File\Exists;
 
 /**
  * Zend Class Exists inheritor

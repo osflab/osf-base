@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\StringToLower;
+use Laminas\Filter\StringToLower;
 
 /**
  * Zend Class StringToLower inheritor

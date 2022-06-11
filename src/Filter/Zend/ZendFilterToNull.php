@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\ToNull;
+use Laminas\Filter\ToNull;
 
 /**
  * Zend Class ToNull inheritor

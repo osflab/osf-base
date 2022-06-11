@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Decompress;
+use Laminas\Filter\Decompress;
 
 /**
  * Zend Class Decompress inheritor

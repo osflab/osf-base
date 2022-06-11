@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\StaticFilter;
+use Laminas\Filter\StaticFilter;
 
 /**
  * Zend Class StaticFilter inheritor

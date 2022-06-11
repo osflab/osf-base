@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Code93ext;
+use Laminas\Validator\Barcode\Code93ext;
 
 /**
  * Zend Class Code93ext inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Zip;
+use Laminas\Filter\Compress\Zip;
 
 /**
  * Zend Class Zip inheritor

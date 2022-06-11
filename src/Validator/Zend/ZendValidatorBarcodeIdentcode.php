@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Identcode;
+use Laminas\Validator\Barcode\Identcode;
 
 /**
  * Zend Class Identcode inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Ean18;
+use Laminas\Validator\Barcode\Ean18;
 
 /**
  * Zend Class Ean18 inheritor

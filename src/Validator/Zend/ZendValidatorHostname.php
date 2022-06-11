@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hostname;
+use Laminas\Validator\Hostname;
 
 /**
  * Zend Class Hostname inheritor

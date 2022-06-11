@@ -58,7 +58,7 @@ class FormInput extends AbstractFormHelper
         }
         
         // Max length
-        $validator = $element->getValidator('Osf\Validator\Zend\ZendValidatorStringLength');
+        $validator = $element->getValidator('Osf\Validator\Laminas\LaminasValidatorStringLength');
         if ($validator && $validator->getMax()) {
             $attributes['maxlength'] = $validator->getMax();
         }

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\GpsPoint;
+use Laminas\Validator\GpsPoint;
 
 /**
  * Zend Class GpsPoint inheritor

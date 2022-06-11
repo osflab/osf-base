@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Iban;
+use Laminas\Validator\Iban;
 
 /**
  * Zend Class Iban inheritor

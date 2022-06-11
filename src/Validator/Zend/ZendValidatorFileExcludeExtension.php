@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\ExcludeExtension;
+use Laminas\Validator\File\ExcludeExtension;
 
 /**
  * Zend Class ExcludeExtension inheritor

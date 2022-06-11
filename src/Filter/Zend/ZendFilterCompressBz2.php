@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Bz2;
+use Laminas\Filter\Compress\Bz2;
 
 /**
  * Zend Class Bz2 inheritor

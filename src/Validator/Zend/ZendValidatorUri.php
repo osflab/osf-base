@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Uri;
+use Laminas\Validator\Uri;
 
 /**
  * Zend Class Uri inheritor

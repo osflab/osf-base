@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\I18n\Validator\IsInt;
+use Laminas\I18n\Validator\IsInt;
 
 /**
  * Zend Class IsInt inheritor

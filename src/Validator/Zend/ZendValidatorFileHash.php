@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Hash;
+use Laminas\Validator\File\Hash;
 
 /**
  * Zend Class Hash inheritor

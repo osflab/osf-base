@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\FilterChain;
+use Laminas\Filter\FilterChain;
 
 /**
  * Zend Class FilterChain inheritor

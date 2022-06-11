@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Word\SeparatorToDash;
+use Laminas\Filter\Word\SeparatorToDash;
 
 /**
  * Zend Class SeparatorToDash inheritor

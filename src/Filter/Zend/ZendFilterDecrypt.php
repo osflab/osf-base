@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Decrypt;
+use Laminas\Filter\Decrypt;
 
 /**
  * Zend Class Decrypt inheritor

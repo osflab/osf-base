@@ -142,7 +142,7 @@ class Table
     protected $trAttrs = [];
     
     /**
-     * @param array|\Zend\Db\Sql\Select|Iterator $data
+     * @param array|\Laminas\Db\Sql\Select|Iterator $data
      */
     public function __construct($data = null)
     {
@@ -150,7 +150,7 @@ class Table
     }
 
     /**
-     * @return array|\Zend\Db\Sql\Select|Iterator $data
+     * @return array|\Laminas\Db\Sql\Select|Iterator $data
      */
     public function getData()
     {
@@ -159,7 +159,7 @@ class Table
 
     /**
      * Set data or link to data of the table to display
-     * @param array|\Zend\Db\Sql\Select|Iterator $data $data
+     * @param array|\Laminas\Db\Sql\Select|Iterator $data $data
      * @return $this
      */
     public function setData($data)

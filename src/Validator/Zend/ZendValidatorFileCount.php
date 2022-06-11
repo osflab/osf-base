@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\Count;
+use Laminas\Validator\File\Count;
 
 /**
  * Zend Class Count inheritor

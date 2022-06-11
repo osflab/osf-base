@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\I18n\Validator\Alpha;
+use Laminas\I18n\Validator\Alpha;
 
 /**
  * Zend Class Alpha inheritor

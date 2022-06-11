@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\UpperCaseWords;
+use Laminas\Filter\UpperCaseWords;
 
 /**
  * Zend Class UpperCaseWords inheritor

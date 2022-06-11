@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Itf14;
+use Laminas\Validator\Barcode\Itf14;
 
 /**
  * Zend Class Itf14 inheritor

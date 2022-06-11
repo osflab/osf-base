@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hostname\Jp;
+use Laminas\Validator\Hostname\Jp;
 
 /**
  * Zend Class Jp inheritor

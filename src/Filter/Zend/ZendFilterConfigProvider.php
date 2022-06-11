@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\ConfigProvider;
+use Laminas\Filter\ConfigProvider;
 
 /**
  * Zend Class ConfigProvider inheritor

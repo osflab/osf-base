@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Boolean;
+use Laminas\Filter\Boolean;
 
 /**
  * Zend Class Boolean inheritor

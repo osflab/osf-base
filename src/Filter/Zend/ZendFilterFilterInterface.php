@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\FilterInterface;
+use Laminas\Filter\FilterInterface;
 
 /**
  * Zend Class FilterInterface inheritor

@@ -1,7 +1,7 @@
 <?php
 namespace Osf\View\Helper;
 
-use Zend\View\Helper\HelperInterface;
+use Laminas\View\Helper\HelperInterface;
 
 /**
  * Interface for OSF view helpers

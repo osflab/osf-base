@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Callback;
+use Laminas\Validator\Callback;
 
 /**
  * Zend Class Callback inheritor

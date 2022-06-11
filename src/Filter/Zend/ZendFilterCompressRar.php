@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Rar;
+use Laminas\Filter\Compress\Rar;
 
 /**
  * Zend Class Rar inheritor

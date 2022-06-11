@@ -1,7 +1,7 @@
 <?php
 namespace Osf\Form;
 
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\ValidatorInterface;
 use Osf\Form\Validator\FormValidatorInterface;
 use Osf\Form\Element\ElementAbstract;
 use Osf\Form\Hydrator\HydratorAbstract;
@@ -73,7 +73,7 @@ abstract class AbstractForm implements ValidatorInterface
      * @param array|null $values
      * @return bool
      */
-    public function isValid($values = null) // Cf. ZendValidator::isValid()
+    public function isValid($values = null) // Cf. LaminasValidator::isValid()
     {
         $this->hydrate($values);
         $this->hasFilledElt = false;
@@ -598,6 +598,6 @@ abstract class AbstractForm implements ValidatorInterface
     
     public function getMessages()
     {
-        throw new ArchException('To be implemented (ZendValidator)');
+        throw new ArchException('To be implemented (LaminasValidator)');
     }
 }

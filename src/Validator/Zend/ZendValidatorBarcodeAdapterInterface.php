@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\AdapterInterface;
+use Laminas\Validator\Barcode\AdapterInterface;
 
 /**
  * Zend Class AdapterInterface inheritor

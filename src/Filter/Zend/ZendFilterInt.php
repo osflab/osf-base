@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Int;
+use Laminas\Filter\Int;
 
 /**
  * Zend Class Int inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hostname\Biz;
+use Laminas\Validator\Hostname\Biz;
 
 /**
  * Zend Class Biz inheritor

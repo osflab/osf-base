@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Step;
+use Laminas\Validator\Step;
 
 /**
  * Zend Class Step inheritor

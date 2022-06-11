@@ -1,10 +1,12 @@
 <?php
 namespace Osf\Db\Row;
 
-use Zend\Db\RowGateway\AbstractRowGateway as ZendAbstractRowGateway;
-use Zend\Db\Sql\Sql;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\ResultSet\ResultSetInterface;
+use Laminas\Db\RowGateway\AbstractRowGateway as LaminasAbstractRowGateway;
+use Laminas\Db\Sql\Sql;
 use Osf\Exception\ArchException;
-use Osf\Container\ZendContainer;
+use Osf\Container\LaminasContainer;
 use Osf\Db\Table\AbstractTableGateway;
 use Osf\Stream\Text as T;
 use Osf\Db\Addon\Schema;
@@ -20,21 +22,21 @@ use Osf\Db\Addon\Schema;
  * @subpackage db
  */
 abstract class AbstractRowGateway 
-    extends ZendAbstractRowGateway
+    extends LaminasAbstractRowGateway
     implements RowGatewayInterface
 {
     use Schema;
     
     const SPECIAL_FIELD_BEAN = 'bean';
     
-    protected $tableGateway;
-    protected $extraData = [];
+    protected AbstractTableGateway $tableGateway = null;
+    protected array $extraData = [];
     
     /**
      * FR: Initialisation avec la création du SQL avec le schéma
-     * @see \Zend\Db\RowGateway\AbstractRowGateway::initialize()
+     * @see \Laminas\Db\RowGateway\AbstractRowGateway::initialize()
      */
-    public function initialize()
+    public function initialize(): void
     {
         if ($this->isInitialized) {
             return;
@@ -42,8 +44,8 @@ abstract class AbstractRowGateway
         if (count(array_intersect_key($this->getTableGateway()->getFields(), $this->extraData))) {
             throw new ArchException('Some extra data fields and row fields have the same name');
         }
-        $this->sql = new Sql(ZendContainer::getDbAdapter($this->getSchema()), $this->table);
-        return parent::initialize();
+        $this->sql = new Sql(LaminasContainer::getDbAdapter($this->getSchema()), $this->table);
+        parent::initialize();
     }
     
     /**
@@ -51,10 +53,10 @@ abstract class AbstractRowGateway
      * 
      * Pour valider et filtrer, surcharger cette méthode plutôt que les accesseurs
      * 
-     * @see \Osf\Db\Row\RowGatewayInterface::set()
      * @param string|array $field
      * @param mixed|array $value
-     * @return \Osf\Db\Row\AbstractRowGateway
+     * @return AbstractRowGateway
+     *@see \Osf\Db\Row\RowGatewayInterface::set()
      */
     public function set($field, $value, $withFilters = true)
     {
@@ -120,12 +122,13 @@ abstract class AbstractRowGateway
         
         return $this->data[$field];
     }
-    
+
     /**
      * Multiple set()
      * @param array $values key -> value pairs to put with "set"
      * @param bool $withFilters
      * @return $this
+     * @throws ArchException
      */
     public function setValues(array $values, bool $withFilters = true)
     {
@@ -140,11 +143,12 @@ abstract class AbstractRowGateway
      */
     public function getTableGateway()
     {
-        if (!$this->tableGateway) {
+        if ($this->tableGateway === null) {
             $class = preg_replace('/^(.*\\\\)[^\\\\]+$/', '\\\\$1DbContainer', get_class($this));
             $method = 'get' . T::camelCase($this->table) . 'Table';
             $this->tableGateway = $class::$method();
         }
+
         return $this->tableGateway;
     }
     
@@ -153,7 +157,7 @@ abstract class AbstractRowGateway
      * @param string $value
      * @param string $fkTable
      * @param string $fkField
-     * @return \Osf\Db\Row\AbstractRowGateway
+     * @return AbstractRowGateway
      */
     protected function getInternalFkRow($value, AbstractTableGateway $fkTable, $fkField = 'id')
     {
@@ -167,7 +171,7 @@ abstract class AbstractRowGateway
      * @param string $pkValue
      * @param string $pkField
      * @throws ArchException
-     * @return \Zend\Db\ResultSet\HydratingResultSet
+     * @return ResultSetInterface
      */
     protected function getExternalFkRows(AbstractTableGateway $fkTable, $fkField, $pkValue = null, $pkField = null)
     {
@@ -183,12 +187,13 @@ abstract class AbstractRowGateway
             }
             $pkValue = $this->primaryKeyData[$pkField];
         }
-        return $fkTable->select(array($fkField => $pkValue));
+
+        return $fkTable->select([$fkField => $pkValue]);
     }
     
     /**
      * FR: Récupère l'enregistrement sous forme de tableau avec éventuellement les champs mentionnés
-     * @see \Zend\Db\RowGateway\AbstractRowGateway::toArray()
+     * @see \Laminas\Db\RowGateway\AbstractRowGateway::toArray()
      * @param array $fields
      * @return array
      */

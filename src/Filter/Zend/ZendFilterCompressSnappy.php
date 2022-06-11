@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Snappy;
+use Laminas\Filter\Compress\Snappy;
 
 /**
  * Zend Class Snappy inheritor

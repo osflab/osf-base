@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\File\Rename;
+use Laminas\Filter\File\Rename;
 
 /**
  * Zend Class Rename inheritor

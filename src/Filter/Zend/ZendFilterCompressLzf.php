@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Compress\Lzf;
+use Laminas\Filter\Compress\Lzf;
 
 /**
  * Zend Class Lzf inheritor

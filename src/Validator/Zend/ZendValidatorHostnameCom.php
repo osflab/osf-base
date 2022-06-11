@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Hostname\Com;
+use Laminas\Validator\Hostname\Com;
 
 /**
  * Zend Class Com inheritor

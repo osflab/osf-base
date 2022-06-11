@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Barcode\Leitcode;
+use Laminas\Validator\Barcode\Leitcode;
 
 /**
  * Zend Class Leitcode inheritor

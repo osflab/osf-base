@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Timezone;
+use Laminas\Validator\Timezone;
 
 /**
  * Zend Class Timezone inheritor

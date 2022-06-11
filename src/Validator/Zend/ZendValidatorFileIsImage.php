@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\File\IsImage;
+use Laminas\Validator\File\IsImage;
 
 /**
  * Zend Class IsImage inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Blacklist;
+use Laminas\Filter\Blacklist;
 
 /**
  * Zend Class Blacklist inheritor

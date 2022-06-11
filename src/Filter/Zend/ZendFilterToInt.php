@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\ToInt;
+use Laminas\Filter\ToInt;
 
 /**
  * Zend Class ToInt inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\StringTrim;
+use Laminas\Filter\StringTrim;
 
 /**
  * Zend Class StringTrim inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\Digits;
+use Laminas\Filter\Digits;
 
 /**
  * Zend Class Digits inheritor

@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\LessThan;
+use Laminas\Validator\LessThan;
 
 /**
  * Zend Class LessThan inheritor

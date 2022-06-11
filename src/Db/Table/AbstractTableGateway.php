@@ -1,13 +1,13 @@
 <?php
 namespace Osf\Db\Table;
 
-use Zend\Db\TableGateway\AbstractTableGateway as ZendAbstractTableGateway;
-use Zend\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\TableGateway\AbstractTableGateway as ZendAbstractTableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
 use Osf\Exception\ArchException;
 use Osf\Db\Row\RowHydrator;
 use Osf\Db\Addon\Schema;
 use Osf\View\Table\TableDb;
-use Osf\Container\ZendContainer;
+use Osf\Container\LaminasContainer;
 use Osf\Form\TableForm;
 use Osf\Db\Select;
 
@@ -42,7 +42,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @see \Zend\Db\TableGateway\AbstractTableGateway::initialize()
+     * @see \Laminas\Db\TableGateway\AbstractTableGateway::initialize()
      */
     public function initialize()
     {
@@ -71,8 +71,8 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @see \Zend\Db\TableGateway\AbstractTableGateway::getSql()
-     * @return \Zend\Db\Sql\Sql
+     * @see \Laminas\Db\TableGateway\AbstractTableGateway::getSql()
+     * @return \Laminas\Db\Sql\Sql
      */
     public function getSql()
     {
@@ -103,7 +103,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
      * @param array $ids
      * @param array $fields
      * @task [DB] Get the primary key of current table, not only the 'id' field
-     * @return \Zend\Db\Adapter\Driver\Mysqli\Result
+     * @return \Laminas\Db\Adapter\Driver\Mysqli\Result
      */
     public function findIds(array $ids, array $fields = [])
     {
@@ -180,7 +180,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @return \Zend\Db\Adapter\Driver\ConnectionInterface
+     * @return \Laminas\Db\Adapter\Driver\ConnectionInterface
      */
     public function beginTransaction()
     {
@@ -189,7 +189,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @return \Zend\Db\Adapter\Driver\ConnectionInterface
+     * @return \Laminas\Db\Adapter\Driver\ConnectionInterface
      */
     public function commit()
     {
@@ -197,7 +197,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @return \Zend\Db\Adapter\Driver\ConnectionInterface
+     * @return \Laminas\Db\Adapter\Driver\ConnectionInterface
      */
     public function rollback()
     {
@@ -205,7 +205,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @return \Zend\Db\Adapter\Driver\Mysqli\Mysqli
+     * @return \Laminas\Db\Adapter\Driver\Mysqli\Mysqli
      */
     public function getDriver()
     {
@@ -214,7 +214,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     
     /**
      * @param string $sql
-     * @return \Zend\Db\Adapter\Driver\ResultInterface
+     * @return \Laminas\Db\Adapter\Driver\ResultInterface
      */
     public function execute(string $sql)
     {
@@ -233,7 +233,7 @@ class AbstractTableGateway extends ZendAbstractTableGateway implements TableGate
     }
     
     /**
-     * @return \Zend\Db\Sql\Select
+     * @return \Laminas\Db\Sql\Select
      */
     public function buildSelect($where = null)
     {

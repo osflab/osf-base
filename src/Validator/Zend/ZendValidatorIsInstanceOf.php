@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\IsInstanceOf;
+use Laminas\Validator\IsInstanceOf;
 
 /**
  * Zend Class IsInstanceOf inheritor

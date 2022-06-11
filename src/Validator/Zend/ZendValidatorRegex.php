@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\Validator\Regex;
+use Laminas\Validator\Regex;
 
 /**
  * Zend Class Regex inheritor

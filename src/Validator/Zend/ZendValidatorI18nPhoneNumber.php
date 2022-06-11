@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Validator\Zend;
+namespace Osf\Validator\Laminas;
 
-use Zend\I18n\Validator\PhoneNumber;
+use Laminas\I18n\Validator\PhoneNumber;
 
 /**
  * Zend Class PhoneNumber inheritor

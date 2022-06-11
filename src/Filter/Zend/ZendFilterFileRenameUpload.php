@@ -1,7 +1,7 @@
 <?php
-namespace Osf\Filter\Zend;
+namespace Osf\Filter\Laminas;
 
-use Zend\Filter\File\RenameUpload;
+use Laminas\Filter\File\RenameUpload;
 
 /**
  * Zend Class RenameUpload inheritor
