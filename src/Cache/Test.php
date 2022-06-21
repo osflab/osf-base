@@ -27,6 +27,7 @@ class Test extends OsfTest
         if ($passExists) {
             $cache->getRedis()->auth(trim(file_get_contents($redisPassFile)));
         }
+
         try {
             $available = true;
             $cache->clean('FICTIVEKEY');
@@ -37,7 +38,7 @@ class Test extends OsfTest
             self::assert(false, $e->getMessage());
             $available = false;
         }
-        
+
         if ($available) {
             self::assert($cache->getRedis() instanceof \Redis);
             self::assert(is_int($cache->cleanAll()));

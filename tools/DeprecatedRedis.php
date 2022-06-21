@@ -29,7 +29,7 @@
  * </pre>
  *
  */
-class Redis
+class DeprecatedRedis
 {
     const AFTER                 = '';
     const BEFORE                = '';

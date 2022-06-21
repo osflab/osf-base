@@ -1,8 +1,8 @@
 <?php
 namespace Osf\Cache;
 
-use Psr\SimpleCache\InvalidArgumentException as PsrInvalidArgumentException;
 use Osf\Exception\ArchException;
+use Psr\SimpleCache\InvalidArgumentException as PsrInvalidArgumentException;
 
 /**
  * PSR6 compatible invalid argument exception

@@ -1,5 +1,4 @@
 <?php
-
 namespace Osf\Controller {
 
     use Osf\Console\ConsoleHelper as ConsoleBase;

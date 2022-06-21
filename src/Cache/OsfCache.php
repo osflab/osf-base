@@ -1,11 +1,11 @@
 <?php
 namespace Osf\Cache;
 
+use DateInterval;
 use Laminas\Cache\Storage\Adapter\Redis as RedisAdapter;
 use Laminas\Cache\Storage\Adapter\RedisOptions;
+use Laminas\Cache\Storage\Adapter\RedisResourceManager;
 use Osf\Container\OsfContainer as Container;
-use Osf\Cache\InvalidArgumentException;
-use Osf\Cache\RedisResourceManager;
 use Osf\Container\VendorContainer;
 use Osf\Exception\ArchException;
 use Psr\SimpleCache\CacheInterface;
@@ -27,11 +27,16 @@ class OsfCache implements CacheInterface
     const NSKSEP = ':'; // Namespace / key separator
     const DEV_NOCACHE = false; // Cache disable in dev mode ?
     
-    protected $lastKey = null;
-    protected $redis = null;
-    protected $namespace;
-    
-    public function __construct(string $namespace = self::DEFAULT_NAMESPACE, \Redis $redis = null)
+    protected ?string $lastKey = null;
+    protected ?Redis $redis = null;
+    protected string $namespace;
+
+    /**
+     * @param string $namespace
+     * @param Redis|null $redis
+     * @throws ArchException
+     */
+    public function __construct(string $namespace = self::DEFAULT_NAMESPACE, Redis $redis = null)
     {
         if (!preg_match('/^[a-zA-Z_]{1,16}$/', $namespace)) {
             throw new ArchException('Invalid namespace syntax');
@@ -43,13 +48,15 @@ class OsfCache implements CacheInterface
     // ------------------------------------------------------------------------
     // PSR6 METHODS
     // ------------------------------------------------------------------------
-    
+
     /**
      * PSR6: Persists data in the cache, uniquely referenced by a key with an optional expiration TTL time.
      * @param string $key
      * @param mixed $value
-     * @param null|int|DateInterval $ttl
+     * @param null $ttl
      * @return bool
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
     public function set($key, $value, $ttl = null): bool
     {
@@ -67,14 +74,16 @@ class OsfCache implements CacheInterface
         }
         return true;
     }
-    
+
     /**
      * PSR6: Fetches a value from the cache.
      * @param string $key
      * @param mixed $default
      * @return mixed
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
-    public function get($key, $default = null)
+    public function get($key, $default = null): mixed
     {
         $this->checkKey($key);
         if ($this->noCache()) {
@@ -83,32 +92,36 @@ class OsfCache implements CacheInterface
         $value = $this->getRedis()->get($this->filterKey($key));
         return $value === false ? $default : $value;
     }
-    
+
     /**
      * PSR6: Delete an item from the cache by its unique key.
      * @param string $key
      * @return bool
+     * @throws InvalidArgumentException|ArchException
      */
     public function delete($key): bool
     {
         $this->checkKey($key);
         return (bool) $this->clean($key);
     }
-    
+
     /**
      * PSR6: Wipes clean the entire cache's keys.
      * @return bool
+     * @throws ArchException
      */
     public function clear(): bool
     {
         return (bool) $this->cleanAll();
     }
-    
+
     /**
      * PSR6: Obtains multiple cache items by their unique keys.
      * @param iterable $keys
      * @param mixed $default
      * @return iterable
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
     public function getMultiple($keys, $default = null): iterable
     {
@@ -119,12 +132,14 @@ class OsfCache implements CacheInterface
         }
         return $values;
     }
-    
+
     /**
      * PSR6: Persists a set of key => value pairs in the cache, with an optional TTL.
      * @param iterable $values
-     * @param null|int|DateInterval $ttl
+     * @param null $ttl
      * @return bool
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
     public function setMultiple($values, $ttl = null): bool
     {
@@ -136,11 +151,13 @@ class OsfCache implements CacheInterface
         }
         return $return;
     }
-    
+
     /**
      * PSR6: Deletes multiple cache items in a single operation.
      * @param iterable $keys
      * @return bool
+     * @throws InvalidArgumentException
+     * @throws ArchException
      */
     public function deleteMultiple($keys): bool
     {
@@ -151,12 +168,13 @@ class OsfCache implements CacheInterface
         }
         return $return;
     }
-    
+
     /**
      * PSR6: Determines whether an item is present in the cache.
      * @param string $key The cache item key.
      * @return bool
-     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
     public function has($key): bool
     {
@@ -167,13 +185,15 @@ class OsfCache implements CacheInterface
     // ------------------------------------------------------------------------
     // ADDITIONAL METHODS
     // ------------------------------------------------------------------------
-    
+
     /**
      * Start cache via buffer
      * @param string $key
      * @return $this
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
-    public function start(string $key)
+    public function start(string $key): static
     {
         $filteredKey = $this->filterKey($key);
         $value = $this->get($filteredKey);
@@ -186,11 +206,13 @@ class OsfCache implements CacheInterface
         }
         return $this;
     }
-    
+
     /**
      * Stop buffer and put it in cache
      * @param float $timeout
      * @return $this
+     * @throws ArchException
+     * @throws InvalidArgumentException
      */
     public function stop(float $timeout = 0.0): self
     {
@@ -200,10 +222,11 @@ class OsfCache implements CacheInterface
         $this->lastKey = null;
         return $this;
     }
-    
+
     /**
      * Clean all values of the current namespace
      * @return int Number of deleted fields
+     * @throws ArchException
      */
     public function cleanAll(): int
     {
@@ -217,11 +240,12 @@ class OsfCache implements CacheInterface
         }
         return $cpt;
     }
-    
+
     /**
      * Call Redis::del()
      * @param string $key
      * @return int Number of deleted fields
+     * @throws ArchException
      */
     public function clean(string $key): int
     {
@@ -231,9 +255,10 @@ class OsfCache implements CacheInterface
     // ------------------------------------------------------------------------
     // UTILITIES
     // ------------------------------------------------------------------------
-    
+
     /**
-     * @return \Redis
+     * @return Redis
+     * @throws ArchException
      */
     public function getRedis(): Redis
     {
@@ -241,8 +266,8 @@ class OsfCache implements CacheInterface
             if (class_exists('\Osf\Container\VendorContainer')) {
                 $this->redis = VendorContainer::getRedis();
             } else {
-                $this->redis = new \Redis();
-                $this->redis->pconnect('127.0.0.1', 6379);
+                $this->redis = new Redis();
+                $this->redis->pconnect('127.0.0.1');
                 $this->redis->setOption(Redis::OPT_SERIALIZER, 
                         defined('Redis::SERIALIZER_IGBINARY')
                         ? Redis::SERIALIZER_IGBINARY
@@ -279,7 +304,7 @@ class OsfCache implements CacheInterface
      * No cache detection
      * @return bool
      */
-    protected function noCache()
+    protected function noCache(): bool
     {
         return self::DEV_NOCACHE && Container::getApplication()->isDevelopment();
     }
@@ -290,9 +315,9 @@ class OsfCache implements CacheInterface
      * @return void
      * @throws InvalidArgumentException
      */
-    protected function checkKey($key): void
+    protected function checkKey(mixed $key): void
     {
-        if (!is_string($key) || !preg_match('/^[a-zA-Z0-9:+_-]{1,1000}$/', $key)) {
+        if (!is_string($key) || !preg_match('/^[a-zA-Z\d:+_-]{1,1000}$/', $key)) {
             throw new InvalidArgumentException('Invalid cache key [' . $key . ']');
         }
     }
@@ -303,7 +328,7 @@ class OsfCache implements CacheInterface
      * @return void
      * @throws InvalidArgumentException
      */
-    protected function checkIterable($keys): void
+    protected function checkIterable(mixed $keys): void
     {
         if (!is_iterable($keys)) {
             throw new InvalidArgumentException('Cache keys are not iterable');
@@ -315,10 +340,10 @@ class OsfCache implements CacheInterface
      * @param mixed $ttl
      * @return void
      */
-    protected function filterTtl(&$ttl): void
+    protected function filterTtl(mixed &$ttl): void
     {
         if ($ttl !== null) {
-            if ($ttl instanceof \DateInterval) {
+            if ($ttl instanceof DateInterval) {
                 $ttl = (int) $ttl->format('%s');
             }
             $ttl = (int) $ttl;
